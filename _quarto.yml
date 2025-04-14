@@ -1,0 +1,26 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "ClubeR"
+  site-url: https://astuciasnor.github.io/cluber
+  repo-url: https://github.com/astuciasnor/cluber
+  repo-actions: [edit, issue]
+  navbar:
+    left:
+      - href: index.qmd
+        text: Início
+      - href: tutoriais.qmd
+        text: Tutoriais
+      - href: sobre.qmd
+        text: Sobre
+
+format:
+  html:
+    theme: yeti
+    toc: true
+
+
+
+

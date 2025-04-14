@@ -1,0 +1,8 @@
+---
+title: "Clube do Código"
+format: html
+---
+
+# 👋 Bem-vindo ao Clube do Código R da UFPA/Bragança 
+
+Este é o espaço do Clube do Código do Campus da UFPA Bragança. Aqui você encontra tutoriais, dicas e avanços em R (principalmente) e um pouco de Python.
