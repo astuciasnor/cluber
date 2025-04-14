@@ -7,19 +7,30 @@ website:
   site-url: https://astuciasnor.github.io/cluber
   repo-url: https://github.com/astuciasnor/cluber
   repo-actions: [edit, issue]
+  page-navigation: true
+  page-footer: "© 2025 ClubeR - UFPA/Bragança"
   navbar:
     left:
       - href: index.qmd
         text: Início
       - href: tutoriais.qmd
         text: Tutoriais
+      - href: blog.qmd
+        text: Blog
       - href: sobre.qmd
         text: Sobre
 
 format:
   html:
-    theme: yeti
+    theme: cosmo
     toc: true
+    number-sections: true
+    code-copy: true
+    code-overflow: wrap
+
+resources:
+  - posts
+
 
 
 

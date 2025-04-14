@@ -1,0 +1,16 @@
+---
+title: "ANOVA com aov() e emmeans"
+date: 2025-03-30
+format: html
+---
+
+# 📊 ANOVA com aov() e emmeans
+
+Veja como aplicar ANOVA com `aov()` e realizar comparações múltiplas com `emmeans`.
+
+```{r}
+library(emmeans)
+
+modelo <- aov(Sepal.Length ~ Species, data = iris)
+emmeans(modelo, pairwise ~ Species)
+```

@@ -1,0 +1,26 @@
+---
+title: "Tutoriais"
+format: html
+---
+
+# 📘 Tutoriais
+
+Nesta seção, reunimos tutoriais organizados por temas. Os tutoriais serão atualizados continuamente.
+
+## 🧪 Estatística com R
+
+- Análise descritiva com `dplyr`
+- Regressão linear com `ggplot2` e `broom`
+- ANOVA com `aov()` e `emmeans`
+
+## 🐟 Aplicações em Bioecologia
+
+- Manipulação de dados de campo
+- Visualização de variáveis ambientais
+- Modelos de crescimento em peixes
+
+## 🧬 Introdução ao Python
+
+- Ambiente Jupyter
+- Leitura e tratamento de dados com `pandas`
+- Gráficos com `matplotlib` e `seaborn`

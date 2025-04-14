@@ -1,0 +1,23 @@
+"0","library(dplyr)"
+"2","
+Anexando pacote: ‘dplyr’
+
+"
+"2","Os seguintes objetos são mascarados por ‘package:stats’:
+
+    filter, lag
+
+"
+"2","Os seguintes objetos são mascarados por ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+"
+"0","dados <- tibble::tibble("
+"0","  especie = c(""Tambaqui"", ""Tambaqui"", ""Pirarucu"", ""Pirarucu""),"
+"0","  peso = c(1.2, 1.5, 10.5, 11.0)"
+"0",")"
+"0",""
+"0","dados |>"
+"0","  group_by(especie) |>"
+"0","  summarise(media_peso = mean(peso))"

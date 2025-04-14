@@ -1,0 +1,10 @@
+[
+  {
+    "listing": "/blog.html",
+    "items": [
+      "/posts/analise-descritiva/index.html",
+      "/posts/regressao-linear/index.html",
+      "/posts/anova/index.html"
+    ]
+  }
+]

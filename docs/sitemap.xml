@@ -2,11 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://astuciasnor.github.io/cluber/index.html</loc>
-    <lastmod>2025-04-14T15:02:02.044Z</lastmod>
+    <lastmod>2025-04-14T18:46:18.626Z</lastmod>
   </url>
   <url>
     <loc>https://astuciasnor.github.io/cluber/tutoriais.html</loc>
-    <lastmod>2025-04-14T15:00:31.792Z</lastmod>
+    <lastmod>2025-04-14T18:54:03.282Z</lastmod>
   </url>
   <url>
     <loc>https://astuciasnor.github.io/cluber/cluber.html</loc>
@@ -14,6 +14,22 @@
   </url>
   <url>
     <loc>https://astuciasnor.github.io/cluber/sobre.html</loc>
-    <lastmod>2025-04-14T15:00:31.792Z</lastmod>
+    <lastmod>2025-04-14T15:35:09.470Z</lastmod>
+  </url>
+  <url>
+    <loc>https://astuciasnor.github.io/cluber/blog.html</loc>
+    <lastmod>2025-04-14T18:38:39.199Z</lastmod>
+  </url>
+  <url>
+    <loc>https://astuciasnor.github.io/cluber/posts/analise-descritiva/index.html</loc>
+    <lastmod>2025-04-14T18:44:34.161Z</lastmod>
+  </url>
+  <url>
+    <loc>https://astuciasnor.github.io/cluber/posts/regressao-linear/index.html</loc>
+    <lastmod>2025-04-14T18:44:22.843Z</lastmod>
+  </url>
+  <url>
+    <loc>https://astuciasnor.github.io/cluber/posts/anova/index.html</loc>
+    <lastmod>2025-04-14T18:46:04.345Z</lastmod>
   </url>
 </urlset>

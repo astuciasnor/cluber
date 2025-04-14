@@ -1,0 +1,11 @@
+---
+title: "Blog do ClubeR"
+listing:
+  contents: posts
+  sort: "date desc"
+  type: default
+---
+
+# 🗞️ Últimos Tutoriais e Artigos
+
+Nesta seção você encontrará os posts mais recentes publicados pelo ClubeR. Aqui compartilhamos avanços, reflexões e novidades sobre programação científica.

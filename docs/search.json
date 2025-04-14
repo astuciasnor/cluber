@@ -2,9 +2,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Clube do Código",
+    "title": "Bem-vindo ao ClubeR",
     "section": "",
-    "text": "👋 Bem-vindo ao Clube do Código R da UFPA/Bragança\nEste é o espaço do Clube do Código do Campus da UFPA Bragança. Aqui você encontra tutoriais, dicas e avanços em R (principalmente) e um pouco de Python."
+    "text": "1 🎓 Clube do Código - UFPA/Bragança\nEste site é um espaço colaborativo criado para apoiar estudantes de graduação e pós-graduação interessados em programação aplicada à pesquisa científica, com foco em R e Python.\n\n\n\n\n\n\nNote\n\n\n\nMissão: Tornar a programação científica mais acessível para a comunidade acadêmica do litoral amazônico.\n\n\nExplore nossos tutoriais organizados por tema ou confira os posts mais recentes no blog."
   },
   {
     "objectID": "cluber.html",
@@ -19,5 +19,68 @@
     "title": "cluber",
     "section": "",
     "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
+  },
+  {
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "Blog do ClubeR",
+    "section": "",
+    "text": "1 🗞️ Últimos Tutoriais e Artigos\nNesta seção você encontrará os posts mais recentes publicados pelo ClubeR. Aqui compartilhamos avanços, reflexões e novidades sobre programação científica.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAnálise descritiva com dplyr\n\n\n\n\n\n\n\n\n\n\n\nApr 14, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nRegressão linear com ggplot2 e broom\n\n\n\n\n\n\n\n\n\n\n\nApr 10, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nANOVA com aov() e emmeans\n\n\n\n\n\n\n\n\n\n\n\nMar 30, 2025\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/analise-descritiva/index.html",
+    "href": "posts/analise-descritiva/index.html",
+    "title": "Análise descritiva com dplyr",
+    "section": "",
+    "text": "1 🔍 Análise descritiva com dplyr\nNeste tutorial, exploramos como utilizar o pacote dplyr para realizar uma análise descritiva eficiente de conjuntos de dados.\n\nlibrary(dplyr)\n\n\nAnexando pacote: 'dplyr'\n\n\nOs seguintes objetos são mascarados por 'package:stats':\n\n    filter, lag\n\n\nOs seguintes objetos são mascarados por 'package:base':\n\n    intersect, setdiff, setequal, union\n\ndados &lt;- tibble::tibble(\n  especie = c(\"Tambaqui\", \"Tambaqui\", \"Pirarucu\", \"Pirarucu\"),\n  peso = c(1.2, 1.5, 10.5, 11.0)\n)\n\ndados |&gt;\n  group_by(especie) |&gt;\n  summarise(media_peso = mean(peso))\n\n# A tibble: 2 × 2\n  especie  media_peso\n  &lt;chr&gt;         &lt;dbl&gt;\n1 Pirarucu      10.8 \n2 Tambaqui       1.35"
+  },
+  {
+    "objectID": "posts/regressao-linear/index.html",
+    "href": "posts/regressao-linear/index.html",
+    "title": "Regressão linear com ggplot2 e broom",
+    "section": "",
+    "text": "1 📈 Regressão linear com ggplot2 e broom\nVeja como ajustar um modelo linear e extrair seus parâmetros com broom, visualizando os resultados com ggplot2.\n\nlibrary(ggplot2)\nlibrary(broom)\n\nmodelo &lt;- lm(mpg ~ wt, data = mtcars)\nglance(modelo)\n\n# A tibble: 1 × 12\n  r.squared adj.r.squared sigma statistic  p.value    df logLik   AIC   BIC\n      &lt;dbl&gt;         &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1     0.753         0.745  3.05      91.4 1.29e-10     1  -80.0  166.  170.\n# ℹ 3 more variables: deviance &lt;dbl&gt;, df.residual &lt;int&gt;, nobs &lt;int&gt;"
+  },
+  {
+    "objectID": "tutoriais.html",
+    "href": "tutoriais.html",
+    "title": "Tutoriais",
+    "section": "",
+    "text": "Navegue pelos conteúdos organizados por área de interesse.\n\n\n\nAnálise descritiva com dplyr\nRegressão linear com ggplot2 e broom\nANOVA com aov() e emmeans\n\n\n\n\n\nManipulação de dados de campo\nVisualização de variáveis ambientais\nModelos de crescimento em peixes\n\n\n\n\n\nAmbiente Jupyter\nLeitura e tratamento de dados com pandas\nGráficos com matplotlib e seaborn"
+  },
+  {
+    "objectID": "tutoriais.html#estatística-com-r",
+    "href": "tutoriais.html#estatística-com-r",
+    "title": "Tutoriais",
+    "section": "",
+    "text": "Análise descritiva com dplyr\nRegressão linear com ggplot2 e broom\nANOVA com aov() e emmeans"
+  },
+  {
+    "objectID": "tutoriais.html#aplicações-em-bioecologia",
+    "href": "tutoriais.html#aplicações-em-bioecologia",
+    "title": "Tutoriais",
+    "section": "",
+    "text": "Manipulação de dados de campo\nVisualização de variáveis ambientais\nModelos de crescimento em peixes"
+  },
+  {
+    "objectID": "tutoriais.html#introdução-ao-python",
+    "href": "tutoriais.html#introdução-ao-python",
+    "title": "Tutoriais",
+    "section": "",
+    "text": "Ambiente Jupyter\nLeitura e tratamento de dados com pandas\nGráficos com matplotlib e seaborn"
+  },
+  {
+    "objectID": "posts/anova/index.html",
+    "href": "posts/anova/index.html",
+    "title": "ANOVA com aov() e emmeans",
+    "section": "",
+    "text": "1 📊 ANOVA com aov() e emmeans\nVeja como aplicar ANOVA com aov() e realizar comparações múltiplas com emmeans.\n\nlibrary(emmeans)\n\nWelcome to emmeans.\nCaution: You lose important information if you filter this package's results.\nSee '? untidy'\n\nmodelo &lt;- aov(Sepal.Length ~ Species, data = iris)\nemmeans(modelo, pairwise ~ Species)\n\n$emmeans\n Species    emmean     SE  df lower.CL upper.CL\n setosa       5.01 0.0728 147     4.86     5.15\n versicolor   5.94 0.0728 147     5.79     6.08\n virginica    6.59 0.0728 147     6.44     6.73\n\nConfidence level used: 0.95 \n\n$contrasts\n contrast               estimate    SE  df t.ratio p.value\n setosa - versicolor      -0.930 0.103 147  -9.033  &lt;.0001\n setosa - virginica       -1.582 0.103 147 -15.366  &lt;.0001\n versicolor - virginica   -0.652 0.103 147  -6.333  &lt;.0001\n\nP value adjustment: tukey method for comparing a family of 3 estimates"
+  },
+  {
+    "objectID": "sobre.html",
+    "href": "sobre.html",
+    "title": "Sobre",
+    "section": "",
+    "text": "1 ℹ️ Sobre o ClubeR\nO Clube do Código do campus da UFPA em Bragança é uma iniciativa voltada ao compartilhamento de conhecimento em programação científica.\nCoordenado por docentes do Instituto de Estudos Costeiros (IECOS), o ClubeR visa fortalecer a formação técnico-científica de estudantes que atuam com bioestatística, química de alimentos, bioecologia e ciência de dados.\n\n1.0.1 Contato\nDúvidas, sugestões ou colaborações? Fale conosco:\n\n📧 evaldoms@ufpa.br\n🌐 GitHub"
   }
 ]

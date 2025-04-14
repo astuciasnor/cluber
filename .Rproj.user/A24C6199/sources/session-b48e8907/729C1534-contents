@@ -1,0 +1,17 @@
+---
+title: "Regressão linear com ggplot2 e broom"
+date: 2025-04-10
+format: html
+---
+
+# 📈 Regressão linear com ggplot2 e broom
+
+Veja como ajustar um modelo linear e extrair seus parâmetros com `broom`, visualizando os resultados com `ggplot2`.
+
+```{r}
+library(ggplot2)
+library(broom)
+
+modelo <- lm(mpg ~ wt, data = mtcars)
+glance(modelo)
+```
