@@ -1,7 +1,0 @@
-[1,"==> quarto preview index.qmd --to html --no-watch-inputs --no-browse\n\n"]
-[1,"pandoc \n  to: html\n  output-file: index.html\n  standalone: true\n  title-prefix: ClubeR\n  section-divs: true\n  html-math-method: mathjax\n  wrap: none\n  default-image-extension: png\n  toc: true\n  number-sections: true\n  \nmetadata\n  document-css: false\n  link-citations: true\n  date-format: long\n  lang: en\n  resources:\n    - posts\n  theme: cosmo\n  code-copy: true\n  title: Bem-vindo ao ClubeR\n  \n"]
-[1,"Output created: docs\\index.html\n\nPreparing to preview\n\nWatching files for changes\nBrowse at http://localhost:6582/\n"]
-[1,"GET: /\n"]
-[1,"GET: /tutoriais.html\n"]
-[1,"GET: /posts/anova/\n"]
-[1,"GET: /sobre.html\n"]

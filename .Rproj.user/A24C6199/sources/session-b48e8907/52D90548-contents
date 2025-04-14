@@ -10,8 +10,8 @@ Navegue pelos conteúdos organizados por área de interesse.
 ## 🧪 Estatística com R
 
 -   [Análise descritiva com `dplyr`](posts/analise-descritiva/index.qmd)
--   [Regressão linear com `ggplot2` e `broom`](posts/regressao-linear/index.com)
--   [ANOVA com `aov()` e `emmeans`](posts/anova/index.com)
+-   [Regressão linear com `ggplot2` e `broom`](posts/regressao-linear/index.qmd)
+-   [ANOVA com `aov()` e `emmeans`](posts/anova/index.qmd)
 
 ## 🐟 Aplicações em Bioecologia
 
