@@ -1,0 +1,45 @@
+---
+title: "Preferências do RStudio"
+author: "Evaldo Silva"
+date: "2025-04-14"
+categories: [rstudio, R]
+image: ajuste_rstudio.png
+---
+
+![](ajuste_rstudio.png){width="183"}
+
+### ⚙️ Ajustes essenciais para turbinar sua produtividade no RStudio
+
+Abaixo, apresento um conjunto enxuto e eficaz de configurações que recomendo aplicar à IDE RStudio, com foco em aumentar sua produtividade, melhorar a leitura do código e garantir um ambiente de trabalho mais fluido e confiável.
+
+Utilize o pacote `{rstudio.prefs}` para aplicar essas preferências de forma automatizada:
+
+```{r}
+#| eval: false
+#| echo: true
+
+# Instale o pacote, se necessário
+# install.packages("rstudio.prefs")
+
+library(rstudio.prefs)
+
+use_rstudio_prefs(
+  # Editor
+  soft_wrap_r_files = TRUE,
+  show_line_numbers = TRUE,
+  rainbow_parens = TRUE,
+  highlight_selected_line = TRUE,
+  auto_match_parens = TRUE,
+
+  # Workspace
+  load_workspace = FALSE,
+  save_workspace = "never",
+
+  # Aparência
+  editor_theme = "Tomorrow Night Bright",  # ou outro com bom contraste e parênteses destacados
+
+  # Atualizações e diagnósticos
+  check_for_updates = TRUE,
+  send_crash_reports = TRUE
+)
+```

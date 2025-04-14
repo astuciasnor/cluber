@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Evaldo Silva">
+<meta name="dcterms.date" content="2025-04-11">
 
-<title>Blog do ClubeR – ClubeR</title>
+<title>Instalando o R, RStudio e Rtools – ClubeR</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,27 +22,59 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,65 +102,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-subtitle','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-subtitle","listing-image","listing-description"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
@@ -137,7 +113,7 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">ClubeR</span>
     </a>
   </div>
@@ -148,19 +124,19 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../../../index.html"> 
 <span class="menu-text">Início</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./tutoriais.html"> 
+    <a class="nav-link" href="../../../tutoriais.html"> 
 <span class="menu-text">Tutoriais</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./blog.html" aria-current="page"> 
+    <a class="nav-link" href="../../../blog.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./sobre.html"> 
+    <a class="nav-link" href="../../../sobre.html"> 
 <span class="menu-text">Sobre</span></a>
   </li>  
 </ul>
@@ -179,23 +155,39 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#últimos-tutoriais-e-artigos" id="toc-últimos-tutoriais-e-artigos" class="nav-link active" data-scroll-target="#últimos-tutoriais-e-artigos"><span class="header-section-number">1</span> 🗞️ Últimos Tutoriais e Artigos</a></li>
+  <li><a href="#introdução" id="toc-introdução" class="nav-link active" data-scroll-target="#introdução"><span class="header-section-number">1</span> Introdução</a></li>
+  <li><a href="#procedimentos-de-instalação-e-configuração-do-r" id="toc-procedimentos-de-instalação-e-configuração-do-r" class="nav-link" data-scroll-target="#procedimentos-de-instalação-e-configuração-do-r"><span class="header-section-number">2</span> Procedimentos de Instalação e configuração do R</a></li>
+  <li><a href="#configurações-em-outros-sistemas-operacionais" id="toc-configurações-em-outros-sistemas-operacionais" class="nav-link" data-scroll-target="#configurações-em-outros-sistemas-operacionais"><span class="header-section-number">3</span> Configurações em outros sistemas operacionais</a></li>
+  <li><a href="#recomendações-finais" id="toc-recomendações-finais" class="nav-link" data-scroll-target="#recomendações-finais"><span class="header-section-number">4</span> Recomendações finais</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/astuciasnor/cluber/edit/main/blog.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/astuciasnor/cluber/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/astuciasnor/cluber/edit/main/docs/posts/instalacao_r_rtools/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/astuciasnor/cluber/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Blog do ClubeR</h1>
+<h1 class="title">Instalando o R, RStudio e Rtools</h1>
+<p class="subtitle lead">Criando um ambiente eficiente para uso da Linguagem R</p>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Evaldo Silva </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">April 11, 2025</p>
+    </div>
+  </div>
   
     
   </div>
@@ -205,180 +197,101 @@ window.Quarto = {
 </header>
 
 
-<section id="últimos-tutoriais-e-artigos" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> 🗞️ Últimos Tutoriais e Artigos</h1>
-<p>Nesta seção você encontrará os posts mais recentes publicados pelo ClubeR. Aqui compartilhamos avanços, reflexões e novidades sobre programação científica.</p>
-
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="logos_R_Rstudio.png" class="img-fluid figure-img" width="342"></p>
+<figcaption>Logomarca da Linguagem R, RStudio, RCommander e Tidyverse</figcaption>
+</figure>
+</div>
+<section id="introdução" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="introdução"><span class="header-section-number">1</span> Introdução</h2>
+<p>A Linguagem de Programação R é uma ferramenta essencial para análise de dados e estatística, sendo amplamente utilizada por cientistas e pesquisadores. Para maximizar sua eficácia, é crucial instalar adequadamente o R, juntamente com a IDE RStudio e o Rtools. O RStudio facilita o desenvolvimento de código, enquanto o Rtools auxilia na instalação de pacotes, garantindo um ambiente computacional eficiente e livre de bugs. O Rtools é um conjunto de ferramentas necessárias para compilar pacotes R que contêm códigos feitos em outras linguagens de programação, como C++ ou Fortran.</p>
+<ol type="1">
+<li><p>R + RStudio: Com essa combinação, os usuários desfrutam de um ambiente de desenvolvimento integrado, otimizando a escrita e a execução de códigos R.</p></li>
+<li><p>R + Rtools: A instalação correta do Rtools permite a construção e instalação de pacotes R adicionais, expandindo as possibilidades de análise e melhorando o desempenho do ambiente R.</p></li>
+</ol>
+</section>
+<section id="procedimentos-de-instalação-e-configuração-do-r" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="procedimentos-de-instalação-e-configuração-do-r"><span class="header-section-number">2</span> Procedimentos de Instalação e configuração do R</h2>
+<p>A instalação da Linguagem de Programação R e de seus pacotes no Sistema Operacional Windows ficou mais fácil a partir do lançamento da versão do Rtools42, obtida a partir da página oficial do R-CRAN, eliminando a necessidade de configurar o path nas variáveis de ambiente . Siga os passos a seguir:</p>
+<ol type="1">
+<li><p>Baixe o R e o Rtools da página oficial do <a href="https://cran-r.c3sl.ufpr.br/" target="_blank" class="external-link">R-CRAN</a></p></li>
+<li><p>Baixe o <a href="https://posit.co/download/rstudio-desktop/" target="_blank" class="external-link">RStudio</a> da página oficial.</p></li>
+<li><p>Crie uma pasta em C:\ para instalar o R e o RStudio.</p></li>
+<li><p>Instale o R como administrador, clicando com o botão direito do mouse e em seguida selecione a pasta C:\R\R-4.5.0 (ou versão mais atualizada) para instalação na pasta correta.</p>
+<ul>
+<li>Escolha o idioma português,</li>
+<li>Desmarque a opção de criar atalho e aguarde a conclusão da instalação.</li>
+<li>Após instalação, acesse a pasta C:\R\, clique com o botão direito sobre a subpasta R-4.5.0 e vá em <code>Propriedades</code> e desmarque a opção “Somente Leitura” e clique Aplicar.</li>
+</ul></li>
+<li><p>Instale o <strong>RStudio</strong> como administrador, ajustando a pasta C:\R\RStudio para a instalação e siga as instruções, dando <code>Next</code> nas opções.</p></li>
+<li><p>Após instalar o R e RStudio, instale o Rtools (a versão atual é a <strong>Rtools 4.5</strong>, em conformidade com as versões do R, ou seja, R-4.5.X), também como Administrador e siga as instruções na tela, clicando <code>Next ou Ok</code>.</p></li>
+<li><p>Após as instalçaões dos arquivos executáveis, é o momento de testa se a instalação ocorreu adequadamento, tentando instalar pacotes com códigos-fonte que necessitam de compilação. Abaixo seguem três exemplos de instalação de pacotes que precisam de compilação. Você não necessariamente desses pacotes, sendo somente a título de verificação de suas instalações, as quais se tornariam problemáticas se não houver configurado corretamente o Rtools no sistema operacional Windows. Configurações para Sistema Linux ou Mac OS seguem outros procedimentos.</p></li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"jsonlite"</span>, <span class="at">type =</span> <span class="st">"source"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"psych"</span>, <span class="at">type =</span> <span class="st">"source"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"geosphere"</span>, <span class="at">type =</span> <span class="st">"source"</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(jsonlite)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(psych)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(geosphere)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="8" type="1">
+<li>Instale o devtools e o Rcmdr.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"devtools"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(devtools)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"Rcmdr"</span>, <span class="at">dependencies =</span> T)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Rcmdr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="9" type="1">
+<li>Instale um pacote do Bioconductor.</li>
+</ol>
+<p>Antes de fazer a instalação, atualize os pacotes já instalados.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">"BiocManager"</span>, <span class="at">quietly =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">install.packages</span>(<span class="st">"BiocManager"</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>BiocManager<span class="sc">::</span><span class="fu">install</span>(<span class="st">"EBImage"</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(EBImage)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="10" type="1">
+<li>Instale o h2o para redes neurais.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"h2o"</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(h2o)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="11" type="1">
+<li>Instale o tinytex para criar arquivos pdf com Rmarkdown e Quarto</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"tinytex"</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>tinytex<span class="sc">::</span><span class="fu">install_tinytex</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="12" type="1">
+<li>Instale o conjunto de pacotes tidyverse.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="configurações-em-outros-sistemas-operacionais" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="configurações-em-outros-sistemas-operacionais"><span class="header-section-number">3</span> Configurações em outros sistemas operacionais</h2>
+<p>O Rtools é um conjunto de ferramentas projetadas especificamente para o sistema operacional Windows e, portanto, não é necessário instalar ou configurar o Rtools em um Mac OS ou um Sistema Linux. Em vez disso, no Mac OS, é necessário instalar o Xcode, um conjunto de ferramentas de desenvolvimento de software da Apple. O Xcode inclui compiladores, ferramentas de depuração, bibliotecas e outros recursos que são essenciais para o desenvolvimento de software no Mac OS. Depois de instalar o Xcode, o R pode usar essas ferramentas para compilar pacotes que contêm código C++ ou Fortran.</p>
+<p>Assim como no Mac OS, no sistema Linux, é necessário instalar um conjunto de ferramentas de desenvolvimento de software para compilar pacotes R que contenham código C++ ou Fortran. A maioria das distribuições Linux vem com um conjunto básico de ferramentas de desenvolvimento de software instaladas, incluindo um compilador C/C++, ferramentas de depuração e bibliotecas. No entanto, para compilar pacotes R que contenham código C++ ou Fortran, pode ser necessário instalar pacotes adicionais.&nbsp;&nbsp;Para instalar as ferramentas de desenvolvimento necessárias para compilar pacotes R que contêm código C++ ou Fortran no Linux, você deve seguir instruções&nbsp;específicas de sua distribuição. Por exemplo, para Debian/Ubuntu, execute o seguinte comando no terminal:&nbsp;</p>
+<p><em>sudo apt-get install build-essential</em>. &nbsp;</p>
+<p>É importante ressaltar que, dependendo do pacote R que você deseja compilar, pode ser necessário instalar bibliotecas adicionais e pacotes de desenvolvimento específicos para as dependências do pacote. Em geral, você deve consultar a documentação do pacote R que deseja compilar para obter instruções específicas de instalação.</p>
+</section>
+<section id="recomendações-finais" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="recomendações-finais"><span class="header-section-number">4</span> Recomendações finais</h2>
+<p>Após a instalação bem-sucedida do R, RStudio e Rtools, e a configuração de pacotes essenciais, o usuário está pronto para mergulhar no mundo da ciência de dados e análises estatísticas. Com esse ambiente robusto e eficiente, é possível explorar uma ampla gama de técnicas e metodologias. Para iniciantes na Linguagem R, é recomendado buscar cursos ou tutoriais online para se familiarizar com a sintaxe e as funções básicas da linguagem, além de participar de comunidades e fóruns para trocar experiências e aprender com outros profissionais da área.</p>
 
 
 </section>
 
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-date-sort="1744599600000" data-listing-file-modified-sort="1744656274161" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="41">
-<div class="thumbnail">
-<p><a href="./posts/analise-descritiva/index.html" class="no-external"></a></p><a href="./posts/analise-descritiva/index.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./posts/analise-descritiva/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/analise-descritiva/index.html" class="no-external">Análise descritiva com dplyr</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/analise-descritiva/index.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./posts/analise-descritiva/index.html" class="no-external">Neste tutorial, exploramos como utilizar o pacote <code>dplyr</code> para realizar uma análise descritiva eficiente de conjuntos de dados.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/analise-descritiva/index.html" class="no-external">
-<div class="listing-date">
-Apr 14, 2025
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="rstudio,R" data-listing-date-sort="1744599600000" data-listing-file-modified-sort="1744631632020" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="122">
-<div class="thumbnail">
-<p><a href="./posts/preferencias-rstudio/index.html" class="no-external"></a></p><a href="./posts/preferencias-rstudio/index.html" class="no-external">
-<p><img loading="lazy" src="./posts/preferencias-rstudio/ajuste_rstudio.png" class="thumbnail-image"></p>
-</a><p><a href="./posts/preferencias-rstudio/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/preferencias-rstudio/index.html" class="no-external">Preferências do RStudio</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/preferencias-rstudio/index.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./posts/preferencias-rstudio/index.html" class="no-external">Abaixo, apresento um conjunto enxuto e eficaz de configurações que recomendo aplicar à IDE RStudio, com foco em aumentar sua produtividade, melhorar a leitura do código e…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/preferencias-rstudio/index.html" class="no-external">
-<div class="listing-date">
-Apr 14, 2025
-</div>
-<div class="listing-author">
-Evaldo Silva
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="code,analysis,R" data-listing-date-sort="1744513200000" data-listing-file-modified-sort="1744639238601" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="399">
-<div class="thumbnail">
-<p><a href="./posts/publicando-site-github/index.html" class="no-external"></a></p><a href="./posts/publicando-site-github/index.html" class="no-external">
-<p><img loading="lazy" src="./posts/publicando-site-github/github-pages.png" class="thumbnail-image"></p>
-</a><p><a href="./posts/publicando-site-github/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/publicando-site-github/index.html" class="no-external">Publicando Site Quarto no Github</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/publicando-site-github/index.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./posts/publicando-site-github/index.html" class="no-external">Publicar um site feito com Quarto usando o GitHub Pages é uma maneira prática e gratuita de compartilhar seu conteúdo online. Abaixo, apresento um passo a passo simples e…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/publicando-site-github/index.html" class="no-external">
-<div class="listing-date">
-Apr 13, 2025
-</div>
-<div class="listing-author">
-Evaldo Silva
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-listing-date-sort="1744340400000" data-listing-file-modified-sort="1744663774568" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="904">
-<div class="thumbnail">
-<p><a href="./posts/instalacao-r-rtools/index.html" class="no-external"></a></p><a href="./posts/instalacao-r-rtools/index.html" class="no-external">
-<p><img loading="lazy" src="./posts/instalacao-r-rtools/logos_R_Rstudio.png" class="thumbnail-image"></p>
-</a><p><a href="./posts/instalacao-r-rtools/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/instalacao-r-rtools/index.html" class="no-external">Instalando o R, RStudio e Rtools</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/instalacao-r-rtools/index.html" class="no-external">Criando um ambiente eficiente para uso da Linguagem R</a>
-</div>
-<div class="listing-description">
-<a href="./posts/instalacao-r-rtools/index.html" class="no-external">A Linguagem de Programação R é uma ferramenta essencial para análise de dados e estatística, sendo amplamente utilizada por cientistas e pesquisadores. Para maximizar sua…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/instalacao-r-rtools/index.html" class="no-external">
-<div class="listing-date">
-Apr 11, 2025
-</div>
-<div class="listing-author">
-Evaldo Silva
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-listing-date-sort="1744254000000" data-listing-file-modified-sort="1744656262843" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="24">
-<div class="thumbnail">
-<p><a href="./posts/regressao-linear/index.html" class="no-external"></a></p><a href="./posts/regressao-linear/index.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./posts/regressao-linear/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/regressao-linear/index.html" class="no-external">Regressão linear com ggplot2 e broom</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/regressao-linear/index.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./posts/regressao-linear/index.html" class="no-external">Veja como ajustar um modelo linear e extrair seus parâmetros com <code>broom</code>, visualizando os resultados com <code>ggplot2</code>.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/regressao-linear/index.html" class="no-external">
-<div class="listing-date">
-Apr 10, 2025
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="5" data-listing-date-sort="1743303600000" data-listing-file-modified-sort="1744656364345" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="22">
-<div class="thumbnail">
-<p><a href="./posts/anova/index.html" class="no-external"></a></p><a href="./posts/anova/index.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./posts/anova/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/anova/index.html" class="no-external">ANOVA com aov() e emmeans</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/anova/index.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./posts/anova/index.html" class="no-external">Veja como aplicar ANOVA com <code>aov()</code> e realizar comparações múltiplas com <code>emmeans</code>.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/anova/index.html" class="no-external">
-<div class="listing-date">
-Mar 30, 2025
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -807,7 +720,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
 <p>© 2025 ClubeR - UFPA/Bragança</p>
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/astuciasnor/cluber/edit/main/blog.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/astuciasnor/cluber/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/astuciasnor/cluber/edit/main/docs/posts/instalacao_r_rtools/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/astuciasnor/cluber/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>

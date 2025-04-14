@@ -3,6 +3,9 @@
     "listing": "/blog.html",
     "items": [
       "/posts/analise-descritiva/index.html",
+      "/posts/preferencias-rstudio/index.html",
+      "/posts/publicando-site-github/index.html",
+      "/posts/instalacao-r-rtools/index.html",
       "/posts/regressao-linear/index.html",
       "/posts/anova/index.html"
     ]

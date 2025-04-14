@@ -7,11 +7,18 @@ format: html
 
 Navegue pelos conteúdos organizados por área de interesse.
 
+## 📦 Instalação e Configuração do Ambiente
+
+-   [Instalação do R, RStudio e Rtools](posts/instalacao-r-rtools/index.qmd)
+
+-   [Ajustes de Preferências da IDE RStudio](posts/preferencias-rstudio/index.qmd)
+
 ## 🧪 Estatística com R
 
+-   Instalação do R, RStudio e Rtools
 -   [Análise descritiva com `dplyr`](posts/analise-descritiva/index.qmd)
--   [Regressão linear com `ggplot2` e `broom`](posts/regressao-linear/index.com)
--   [ANOVA com `aov()` e `emmeans`](posts/anova/index.com)
+-   [Regressão linear com `ggplot2` e `broom`](posts/regressao-linear/index.qmd)
+-   [ANOVA com `aov()` e `emmeans`](posts/anova/index.qmd)
 
 ## 🐟 Aplicações em Bioecologia
 
@@ -24,3 +31,7 @@ Navegue pelos conteúdos organizados por área de interesse.
 -   Ambiente Jupyter
 -   Leitura e tratamento de dados com `pandas`
 -   Gráficos com `matplotlib` e `seaborn`
+
+## 🌐 Criação de Websites e Blogs
+
+-   [Publicando site pessoal ou Blog no Github](posts/publicando-site-github/index.qmd)

@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Evaldo Silva">
+<meta name="dcterms.date" content="2025-04-13">
 
-<title>Blog do ClubeR – ClubeR</title>
+<title>Publicando Site Quarto no Github – ClubeR</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,27 +22,59 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,65 +102,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-subtitle','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-subtitle","listing-image","listing-description"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
@@ -137,7 +113,7 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">ClubeR</span>
     </a>
   </div>
@@ -148,19 +124,19 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../../../index.html"> 
 <span class="menu-text">Início</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./tutoriais.html"> 
+    <a class="nav-link" href="../../../tutoriais.html"> 
 <span class="menu-text">Tutoriais</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./blog.html" aria-current="page"> 
+    <a class="nav-link" href="../../../blog.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./sobre.html"> 
+    <a class="nav-link" href="../../../sobre.html"> 
 <span class="menu-text">Sobre</span></a>
   </li>  
 </ul>
@@ -179,23 +155,52 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#últimos-tutoriais-e-artigos" id="toc-últimos-tutoriais-e-artigos" class="nav-link active" data-scroll-target="#últimos-tutoriais-e-artigos"><span class="header-section-number">1</span> 🗞️ Últimos Tutoriais e Artigos</a></li>
+  <li><a href="#como-publicar-um-site-quarto-no-github-pages" id="toc-como-publicar-um-site-quarto-no-github-pages" class="nav-link active" data-scroll-target="#como-publicar-um-site-quarto-no-github-pages"><span class="header-section-number">1</span> 🚀 Como Publicar um Site Quarto no GitHub Pages</a>
+  <ul class="collapse">
+  <li><a href="#pré-requisitos" id="toc-pré-requisitos" class="nav-link" data-scroll-target="#pré-requisitos"><span class="header-section-number">1.1</span> 🌐 Pré-requisitos</a></li>
+  <li><a href="#criar-o-repositório-no-github" id="toc-criar-o-repositório-no-github" class="nav-link" data-scroll-target="#criar-o-repositório-no-github"><span class="header-section-number">1.2</span> 🛠️ 1. Criar o repositório no GitHub</a></li>
+  <li><a href="#clonar-o-repositório-via-rstudio" id="toc-clonar-o-repositório-via-rstudio" class="nav-link" data-scroll-target="#clonar-o-repositório-via-rstudio"><span class="header-section-number">1.3</span> 💻 2. Clonar o repositório via RStudio</a></li>
+  <li><a href="#copiar-os-arquivos-do-seu-blogsite" id="toc-copiar-os-arquivos-do-seu-blogsite" class="nav-link" data-scroll-target="#copiar-os-arquivos-do-seu-blogsite"><span class="header-section-number">1.4</span> 📁 3. Copiar os arquivos do seu blog/site</a></li>
+  <li><a href="#ajustar-o-arquivo-_quarto.yml" id="toc-ajustar-o-arquivo-_quarto.yml" class="nav-link" data-scroll-target="#ajustar-o-arquivo-_quarto.yml"><span class="header-section-number">1.5</span> ⚙️ 4. Ajustar o arquivo <code>_quarto.yml</code></a></li>
+  <li><a href="#verificar-o-arquivo-.gitignore" id="toc-verificar-o-arquivo-.gitignore" class="nav-link" data-scroll-target="#verificar-o-arquivo-.gitignore"><span class="header-section-number">1.6</span> 🚫 5. Verificar o arquivo <code>.gitignore</code></a></li>
+  <li><a href="#renderizar-o-site-localmente" id="toc-renderizar-o-site-localmente" class="nav-link" data-scroll-target="#renderizar-o-site-localmente"><span class="header-section-number">1.7</span> 🧪 6. Renderizar o site localmente</a></li>
+  <li><a href="#commit-e-push-para-o-github" id="toc-commit-e-push-para-o-github" class="nav-link" data-scroll-target="#commit-e-push-para-o-github"><span class="header-section-number">1.8</span> 🟢 7. Commit e push para o GitHub</a></li>
+  <li><a href="#configurar-o-github-pages" id="toc-configurar-o-github-pages" class="nav-link" data-scroll-target="#configurar-o-github-pages"><span class="header-section-number">1.9</span> ⚙️ 8. Configurar o GitHub Pages</a></li>
+  <li><a href="#pronto" id="toc-pronto" class="nav-link" data-scroll-target="#pronto"><span class="header-section-number">1.10</span> 🎉 9. Pronto!</a></li>
+  </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/astuciasnor/cluber/edit/main/blog.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/astuciasnor/cluber/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/astuciasnor/cluber/edit/main/docs/posts/publicando-site-github/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/astuciasnor/cluber/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Blog do ClubeR</h1>
-</div>
+<h1 class="title">Publicando Site Quarto no Github</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">code</div>
+    <div class="quarto-category">analysis</div>
+    <div class="quarto-category">R</div>
+  </div>
+  </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Evaldo Silva </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">April 13, 2025</p>
+    </div>
+  </div>
   
     
   </div>
@@ -205,180 +210,105 @@ window.Quarto = {
 </header>
 
 
-<section id="últimos-tutoriais-e-artigos" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> 🗞️ Últimos Tutoriais e Artigos</h1>
-<p>Nesta seção você encontrará os posts mais recentes publicados pelo ClubeR. Aqui compartilhamos avanços, reflexões e novidades sobre programação científica.</p>
-
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="github-pages.png" class="img-fluid quarto-figure quarto-figure-left figure-img" width="452"></p>
+</figure>
+</div>
+<section id="como-publicar-um-site-quarto-no-github-pages" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="como-publicar-um-site-quarto-no-github-pages"><span class="header-section-number">1</span> 🚀 Como Publicar um Site Quarto no GitHub Pages</h2>
+<p>Publicar um site feito com Quarto usando o GitHub Pages é uma maneira prática e gratuita de compartilhar seu conteúdo online. Abaixo, apresento um passo a passo simples e eficaz para configurar tudo corretamente.</p>
+<section id="pré-requisitos" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="pré-requisitos"><span class="header-section-number">1.1</span> 🌐 Pré-requisitos</h3>
+<p>Antes de começar, certifique-se de ter:</p>
+<ul>
+<li>Uma conta ativa no <a href="https://github.com">GitHub</a></li>
+<li>O Git instalado e configurado no seu sistema</li>
+<li>O R, RStudio e o pacote <code>quarto</code> instalados</li>
+</ul>
+</section>
+<section id="criar-o-repositório-no-github" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="criar-o-repositório-no-github"><span class="header-section-number">1.2</span> 🛠️ 1. Criar o repositório no GitHub</h3>
+<ol type="1">
+<li>Acesse <a href="https://github.com">github.com</a> e clique em <strong>New Repository</strong>.</li>
+<li>Dê ao repositório o nome exato:<br>
+<strong><code>nome-de-usuario.github.io</code></strong><br>
+<em>(substitua pelo seu nome de usuário real do GitHub)</em></li>
+<li>Marque as opções: - ✅ Adicionar <code>.gitignore</code> (selecione <code>R</code>) - ✅ Escolher uma licença (como MIT)</li>
+</ol>
+</section>
+<section id="clonar-o-repositório-via-rstudio" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="clonar-o-repositório-via-rstudio"><span class="header-section-number">1.3</span> 💻 2. Clonar o repositório via RStudio</h3>
+<ol type="1">
+<li><p>No RStudio, vá em:<br>
+<code>File &gt; New Project &gt; Version Control &gt; Git</code></p></li>
+<li><p>Cole a URL do repositório, algo como:<br>
+<code>https://github.com/nome-de-usuario/nome-de-usuario.github.io.git</code></p></li>
+<li><p>Escolha uma pasta local e clique em <strong>Create Project</strong>.</p></li>
+</ol>
+</section>
+<section id="copiar-os-arquivos-do-seu-blogsite" class="level3" data-number="1.4">
+<h3 data-number="1.4" class="anchored" data-anchor-id="copiar-os-arquivos-do-seu-blogsite"><span class="header-section-number">1.4</span> 📁 3. Copiar os arquivos do seu blog/site</h3>
+<ol type="1">
+<li>Copie os arquivos e pastas do seu projeto Quarto (ex: <code>my_blog/</code>) para dentro da pasta do novo repositório. Você pode ver <strong>como criar um Blog em Quarto no Rstudio</strong> clicando neste vídeo <a href="https://www.youtube.com/watch?v=OlvO-EG-P60" target="_blank">tutorial</a> do youtube.</li>
+<li>⚠️ Não sobrescreva arquivos já existentes, como <code>.gitignore</code> ou o <code>.Rproj</code>.</li>
+<li>Certifique-se de que o nome do arquivo de projeto seja:<br>
+<strong><code>nome-de-usuario.github.io.Rproj</code></strong></li>
+</ol>
+</section>
+<section id="ajustar-o-arquivo-_quarto.yml" class="level3" data-number="1.5">
+<h3 data-number="1.5" class="anchored" data-anchor-id="ajustar-o-arquivo-_quarto.yml"><span class="header-section-number">1.5</span> ⚙️ 4. Ajustar o arquivo <code>_quarto.yml</code></h3>
+<ol type="1">
+<li>Localize e abra o arquivo <code>_quarto.yml</code> do seu projeto.</li>
+<li><strong>Adicione a linha abaixo de <code>type:</code></strong> para que a saída vá para a pasta <code>docs</code>:</li>
+</ol>
+<p><img src="images/yml.png" class="img-fluid"></p>
+</section>
+<section id="verificar-o-arquivo-.gitignore" class="level3" data-number="1.6">
+<h3 data-number="1.6" class="anchored" data-anchor-id="verificar-o-arquivo-.gitignore"><span class="header-section-number">1.6</span> 🚫 5. Verificar o arquivo <code>.gitignore</code></h3>
+<ul>
+<li>Verifique se a pasta <code>docs/</code> não está listada no arquivo <code>.gitignore</code>.</li>
+<li>Caso esteja, remova a linha com <code>docs/</code>.</li>
+</ul>
+</section>
+<section id="renderizar-o-site-localmente" class="level3" data-number="1.7">
+<h3 data-number="1.7" class="anchored" data-anchor-id="renderizar-o-site-localmente"><span class="header-section-number">1.7</span> 🧪 6. Renderizar o site localmente</h3>
+<p>No console do RStudio, execute:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>quarto<span class="sc">::</span><span class="fu">quarto_render</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Isso criará a pasta <code>docs/</code> com os arquivos HTML renderizados.</p>
+</section>
+<section id="commit-e-push-para-o-github" class="level3" data-number="1.8">
+<h3 data-number="1.8" class="anchored" data-anchor-id="commit-e-push-para-o-github"><span class="header-section-number">1.8</span> 🟢 7. Commit e push para o GitHub</h3>
+<p>No terminal ou via interface Git do RStudio:</p>
+<p><img src="images/comando-git.png" class="img-fluid"></p>
+</section>
+<section id="configurar-o-github-pages" class="level3" data-number="1.9">
+<h3 data-number="1.9" class="anchored" data-anchor-id="configurar-o-github-pages"><span class="header-section-number">1.9</span> ⚙️ 8. Configurar o GitHub Pages</h3>
+<ol type="1">
+<li><p>No seu repositório GitHub, vá em:<br>
+<code>Settings &gt; Pages</code></p></li>
+<li><p>Em <strong>Source</strong>, selecione:</p>
+<ul>
+<li><p><strong>Branch:</strong> <code>main</code></p></li>
+<li><p><strong>Folder:</strong> <code>/docs</code></p></li>
+<li><p>Clique em <strong>Save</strong></p></li>
+</ul></li>
+</ol>
+</section>
+<section id="pronto" class="level3" data-number="1.10">
+<h3 data-number="1.10" class="anchored" data-anchor-id="pronto"><span class="header-section-number">1.10</span> 🎉 9. Pronto!</h3>
+<p>Aguarde alguns segundos e seu site estará acessível em:</p>
+<blockquote class="blockquote">
+<p><strong>https://nome-de-usuario.github.io/</strong></p>
+</blockquote>
 
 
 </section>
+</section>
 
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-date-sort="1744599600000" data-listing-file-modified-sort="1744656274161" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="41">
-<div class="thumbnail">
-<p><a href="./posts/analise-descritiva/index.html" class="no-external"></a></p><a href="./posts/analise-descritiva/index.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./posts/analise-descritiva/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/analise-descritiva/index.html" class="no-external">Análise descritiva com dplyr</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/analise-descritiva/index.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./posts/analise-descritiva/index.html" class="no-external">Neste tutorial, exploramos como utilizar o pacote <code>dplyr</code> para realizar uma análise descritiva eficiente de conjuntos de dados.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/analise-descritiva/index.html" class="no-external">
-<div class="listing-date">
-Apr 14, 2025
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="rstudio,R" data-listing-date-sort="1744599600000" data-listing-file-modified-sort="1744631632020" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="122">
-<div class="thumbnail">
-<p><a href="./posts/preferencias-rstudio/index.html" class="no-external"></a></p><a href="./posts/preferencias-rstudio/index.html" class="no-external">
-<p><img loading="lazy" src="./posts/preferencias-rstudio/ajuste_rstudio.png" class="thumbnail-image"></p>
-</a><p><a href="./posts/preferencias-rstudio/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/preferencias-rstudio/index.html" class="no-external">Preferências do RStudio</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/preferencias-rstudio/index.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./posts/preferencias-rstudio/index.html" class="no-external">Abaixo, apresento um conjunto enxuto e eficaz de configurações que recomendo aplicar à IDE RStudio, com foco em aumentar sua produtividade, melhorar a leitura do código e…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/preferencias-rstudio/index.html" class="no-external">
-<div class="listing-date">
-Apr 14, 2025
-</div>
-<div class="listing-author">
-Evaldo Silva
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="code,analysis,R" data-listing-date-sort="1744513200000" data-listing-file-modified-sort="1744639238601" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="399">
-<div class="thumbnail">
-<p><a href="./posts/publicando-site-github/index.html" class="no-external"></a></p><a href="./posts/publicando-site-github/index.html" class="no-external">
-<p><img loading="lazy" src="./posts/publicando-site-github/github-pages.png" class="thumbnail-image"></p>
-</a><p><a href="./posts/publicando-site-github/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/publicando-site-github/index.html" class="no-external">Publicando Site Quarto no Github</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/publicando-site-github/index.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./posts/publicando-site-github/index.html" class="no-external">Publicar um site feito com Quarto usando o GitHub Pages é uma maneira prática e gratuita de compartilhar seu conteúdo online. Abaixo, apresento um passo a passo simples e…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/publicando-site-github/index.html" class="no-external">
-<div class="listing-date">
-Apr 13, 2025
-</div>
-<div class="listing-author">
-Evaldo Silva
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-listing-date-sort="1744340400000" data-listing-file-modified-sort="1744663774568" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="904">
-<div class="thumbnail">
-<p><a href="./posts/instalacao-r-rtools/index.html" class="no-external"></a></p><a href="./posts/instalacao-r-rtools/index.html" class="no-external">
-<p><img loading="lazy" src="./posts/instalacao-r-rtools/logos_R_Rstudio.png" class="thumbnail-image"></p>
-</a><p><a href="./posts/instalacao-r-rtools/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/instalacao-r-rtools/index.html" class="no-external">Instalando o R, RStudio e Rtools</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/instalacao-r-rtools/index.html" class="no-external">Criando um ambiente eficiente para uso da Linguagem R</a>
-</div>
-<div class="listing-description">
-<a href="./posts/instalacao-r-rtools/index.html" class="no-external">A Linguagem de Programação R é uma ferramenta essencial para análise de dados e estatística, sendo amplamente utilizada por cientistas e pesquisadores. Para maximizar sua…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/instalacao-r-rtools/index.html" class="no-external">
-<div class="listing-date">
-Apr 11, 2025
-</div>
-<div class="listing-author">
-Evaldo Silva
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-listing-date-sort="1744254000000" data-listing-file-modified-sort="1744656262843" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="24">
-<div class="thumbnail">
-<p><a href="./posts/regressao-linear/index.html" class="no-external"></a></p><a href="./posts/regressao-linear/index.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./posts/regressao-linear/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/regressao-linear/index.html" class="no-external">Regressão linear com ggplot2 e broom</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/regressao-linear/index.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./posts/regressao-linear/index.html" class="no-external">Veja como ajustar um modelo linear e extrair seus parâmetros com <code>broom</code>, visualizando os resultados com <code>ggplot2</code>.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/regressao-linear/index.html" class="no-external">
-<div class="listing-date">
-Apr 10, 2025
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="5" data-listing-date-sort="1743303600000" data-listing-file-modified-sort="1744656364345" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="22">
-<div class="thumbnail">
-<p><a href="./posts/anova/index.html" class="no-external"></a></p><a href="./posts/anova/index.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./posts/anova/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/anova/index.html" class="no-external">ANOVA com aov() e emmeans</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/anova/index.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./posts/anova/index.html" class="no-external">Veja como aplicar ANOVA com <code>aov()</code> e realizar comparações múltiplas com <code>emmeans</code>.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/anova/index.html" class="no-external">
-<div class="listing-date">
-Mar 30, 2025
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -807,7 +737,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
 <p>© 2025 ClubeR - UFPA/Bragança</p>
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/astuciasnor/cluber/edit/main/blog.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/astuciasnor/cluber/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/astuciasnor/cluber/edit/main/docs/posts/publicando-site-github/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/astuciasnor/cluber/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>

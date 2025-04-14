@@ -1,0 +1,109 @@
+---
+title: "Instalando o R, RStudio e Rtools"
+subtitle: "Criando um ambiente eficiente para uso da Linguagem R"
+author: Evaldo Silva
+date: 2025-04-11
+image: logos_R_Rstudio.png
+---
+
+![Logomarca da Linguagem R, RStudio, RCommander e Tidyverse](logos_R_Rstudio.png){fig-align="left" width="342"}
+
+## Introdução
+
+A Linguagem de Programação R é uma ferramenta essencial para análise de dados e estatística, sendo amplamente utilizada por cientistas e pesquisadores. Para maximizar sua eficácia, é crucial instalar adequadamente o R, juntamente com a IDE RStudio e o Rtools. O RStudio facilita o desenvolvimento de código, enquanto o Rtools auxilia na instalação de pacotes, garantindo um ambiente computacional eficiente e livre de bugs. O Rtools é um conjunto de ferramentas necessárias para compilar pacotes R que contêm códigos feitos em outras linguagens de programação, como C++ ou Fortran.
+
+1.  R + RStudio: Com essa combinação, os usuários desfrutam de um ambiente de desenvolvimento integrado, otimizando a escrita e a execução de códigos R.
+
+2.  R + Rtools: A instalação correta do Rtools permite a construção e instalação de pacotes R adicionais, expandindo as possibilidades de análise e melhorando o desempenho do ambiente R.
+
+## Procedimentos de Instalação e configuração do R
+
+A instalação da Linguagem de Programação R e de seus pacotes no Sistema Operacional Windows ficou mais fácil a partir do lançamento da versão do Rtools42, obtida a partir da página oficial do R-CRAN, eliminando a necessidade de configurar o path nas variáveis de ambiente . Siga os passos abaixo e, caso necessário, assista este [**video video**](https:/www.youtube.com/watch?v=zIm3d6Yu1LM&t=2s){target="_blank"} no youtube:
+
+1.  Baixe o R e o Rtools da página oficial do [**R-CRAN**](https://cran-r.c3sl.ufpr.br/){target="_blank"}.
+
+2.  Baixe o [**RStudio**](https://posit.co/download/rstudio-desktop/){target="_blank"} da página oficial.
+
+3.  Crie uma pasta em C:\\ para instalar o R e o RStudio.
+
+4.  Instale o R como administrador, clicando com o botão direito do mouse e em seguida selecione a pasta C:\\R\\R-4.5.0 (ou versão mais atualizada) para instalação na pasta correta.
+
+    -   Escolha o idioma português,
+    -   Desmarque a opção de criar atalho e aguarde a conclusão da instalação.
+    -   Após instalação, acesse a pasta C:\\R\\, clique com o botão direito sobre a subpasta R-4.5.0 e vá em `Propriedades` e desmarque a opção "Somente Leitura" e clique Aplicar.
+
+5.  Instale o **RStudio** como administrador, ajustando a pasta C:\\R\\RStudio para a instalação e siga as instruções, dando `Next` nas opções.
+
+6.  Após instalar o R e RStudio, instale o Rtools (a versão atual é a **Rtools 4.5**, em conformidade com as versões do R, ou seja, R-4.5.X), também como Administrador e siga as instruções na tela, clicando `Next ou Ok`.
+
+7.  Após as instalçaões dos arquivos executáveis, é o momento de testa se a instalação ocorreu adequadamento, tentando instalar pacotes com códigos-fonte que necessitam de compilação. Abaixo seguem três exemplos de instalação de pacotes que precisam de compilação. Você não necessariamente desses pacotes, sendo somente a título de verificação de suas instalações, as quais se tornariam problemáticas se não houver configurado corretamente o Rtools no sistema operacional Windows. Configurações para Sistema Linux ou Mac OS seguem outros procedimentos.
+
+```{r}
+#| eval: false 
+install.packages("jsonlite", type = "source")
+install.packages("psych", type = "source")
+install.packages("geosphere", type = "source")
+library(jsonlite)
+library(psych)
+library(geosphere)
+```
+
+8.  Instale o devtools e o Rcmdr.
+
+```{r}
+#| eval: false 
+install.packages("devtools")
+library(devtools)
+install.packages("Rcmdr", dependencies = T)
+library(Rcmdr)
+```
+
+9.  Instale um pacote do Bioconductor.
+
+Antes de fazer a instalação, atualize os pacotes já instalados.
+
+```{r}
+#| eval: false 
+if (!require("BiocManager", quietly = TRUE))
+  install.packages("BiocManager")
+BiocManager::install("EBImage")
+library(EBImage)
+```
+
+10. Instale o h2o para redes neurais.
+
+```{r}
+#| eval: false 
+install.packages("h2o")
+library(h2o)
+```
+
+11. Instale o tinytex para criar arquivos pdf com Rmarkdown e Quarto
+
+```{r}
+#| eval: false 
+install.packages("tinytex")
+tinytex::install_tinytex()
+```
+
+12. Instale o conjunto de pacotes tidyverse.
+
+```{r}
+#| eval: false 
+install.packages("tidyverse")
+library(tidyverse)
+```
+
+## Configurações em outros sistemas operacionais
+
+O Rtools é um conjunto de ferramentas projetadas especificamente para o sistema operacional Windows e, portanto, não é necessário instalar ou configurar o Rtools em um Mac OS ou um Sistema Linux. Em vez disso, no Mac OS, é necessário instalar o Xcode, um conjunto de ferramentas de desenvolvimento de software da Apple. O Xcode inclui compiladores, ferramentas de depuração, bibliotecas e outros recursos que são essenciais para o desenvolvimento de software no Mac OS. Depois de instalar o Xcode, o R pode usar essas ferramentas para compilar pacotes que contêm código C++ ou Fortran.
+
+Assim como no Mac OS, no sistema Linux, é necessário instalar um conjunto de ferramentas de desenvolvimento de software para compilar pacotes R que contenham código C++ ou Fortran. A maioria das distribuições Linux vem com um conjunto básico de ferramentas de desenvolvimento de software instaladas, incluindo um compilador C/C++, ferramentas de depuração e bibliotecas. No entanto, para compilar pacotes R que contenham código C++ ou Fortran, pode ser necessário instalar pacotes adicionais.  Para instalar as ferramentas de desenvolvimento necessárias para compilar pacotes R que contêm código C++ ou Fortran no Linux, você deve seguir instruções específicas de sua distribuição. Por exemplo, para Debian/Ubuntu, execute o seguinte comando no terminal: 
+
+*sudo apt-get install build-essential*.  
+
+É importante ressaltar que, dependendo do pacote R que você deseja compilar, pode ser necessário instalar bibliotecas adicionais e pacotes de desenvolvimento específicos para as dependências do pacote. Em geral, você deve consultar a documentação do pacote R que deseja compilar para obter instruções específicas de instalação.
+
+## Recomendações finais
+
+Após a instalação bem-sucedida do R, RStudio e Rtools, e a configuração de pacotes essenciais, o usuário está pronto para mergulhar no mundo da ciência de dados e análises estatísticas. Com esse ambiente robusto e eficiente, é possível explorar uma ampla gama de técnicas e metodologias. Para iniciantes na Linguagem R, é recomendado buscar cursos ou tutoriais online para se familiarizar com a sintaxe e as funções básicas da linguagem, além de participar de comunidades e fóruns para trocar experiências e aprender com outros profissionais da área.

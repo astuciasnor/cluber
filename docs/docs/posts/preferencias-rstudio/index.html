@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Evaldo Silva">
+<meta name="dcterms.date" content="2025-04-14">
 
-<title>Blog do ClubeR – ClubeR</title>
+<title>Preferências do RStudio – ClubeR</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,27 +22,59 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,65 +102,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-subtitle','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-subtitle","listing-image","listing-description"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
@@ -137,7 +113,7 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">ClubeR</span>
     </a>
   </div>
@@ -148,19 +124,19 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../../../index.html"> 
 <span class="menu-text">Início</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./tutoriais.html"> 
+    <a class="nav-link" href="../../../tutoriais.html"> 
 <span class="menu-text">Tutoriais</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./blog.html" aria-current="page"> 
+    <a class="nav-link" href="../../../blog.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./sobre.html"> 
+    <a class="nav-link" href="../../../sobre.html"> 
 <span class="menu-text">Sobre</span></a>
   </li>  
 </ul>
@@ -179,23 +155,39 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#últimos-tutoriais-e-artigos" id="toc-últimos-tutoriais-e-artigos" class="nav-link active" data-scroll-target="#últimos-tutoriais-e-artigos"><span class="header-section-number">1</span> 🗞️ Últimos Tutoriais e Artigos</a></li>
+  <li><a href="#ajustes-essenciais-para-turbinar-sua-produtividade-no-rstudio" id="toc-ajustes-essenciais-para-turbinar-sua-produtividade-no-rstudio" class="nav-link active" data-scroll-target="#ajustes-essenciais-para-turbinar-sua-produtividade-no-rstudio"><span class="header-section-number">0.1</span> ⚙️ Ajustes essenciais para turbinar sua produtividade no RStudio</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/astuciasnor/cluber/edit/main/blog.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/astuciasnor/cluber/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/astuciasnor/cluber/edit/main/docs/posts/preferencias-rstudio/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/astuciasnor/cluber/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Blog do ClubeR</h1>
-</div>
+<h1 class="title">Preferências do RStudio</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">rstudio</div>
+    <div class="quarto-category">R</div>
+  </div>
+  </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Evaldo Silva </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">April 14, 2025</p>
+    </div>
+  </div>
   
     
   </div>
@@ -205,180 +197,42 @@ window.Quarto = {
 </header>
 
 
-<section id="últimos-tutoriais-e-artigos" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> 🗞️ Últimos Tutoriais e Artigos</h1>
-<p>Nesta seção você encontrará os posts mais recentes publicados pelo ClubeR. Aqui compartilhamos avanços, reflexões e novidades sobre programação científica.</p>
-
+<p><img src="ajuste_rstudio.png" class="img-fluid" width="183"></p>
+<section id="ajustes-essenciais-para-turbinar-sua-produtividade-no-rstudio" class="level3" data-number="0.1">
+<h3 data-number="0.1" class="anchored" data-anchor-id="ajustes-essenciais-para-turbinar-sua-produtividade-no-rstudio"><span class="header-section-number">0.1</span> ⚙️ Ajustes essenciais para turbinar sua produtividade no RStudio</h3>
+<p>Abaixo, apresento um conjunto enxuto e eficaz de configurações que recomendo aplicar à IDE RStudio, com foco em aumentar sua produtividade, melhorar a leitura do código e garantir um ambiente de trabalho mais fluido e confiável.</p>
+<p>Utilize o pacote <code>{rstudio.prefs}</code> para aplicar essas preferências de forma automatizada:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Instale o pacote, se necessário</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("rstudio.prefs")</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rstudio.prefs)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">use_rstudio_prefs</span>(</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Editor</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">soft_wrap_r_files =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">show_line_numbers =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">rainbow_parens =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">highlight_selected_line =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">auto_match_parens =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Workspace</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">load_workspace =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  <span class="at">save_workspace =</span> <span class="st">"never"</span>,</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Aparência</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  <span class="at">editor_theme =</span> <span class="st">"Tomorrow Night Bright"</span>,  <span class="co"># ou outro com bom contraste e parênteses destacados</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Atualizações e diagnósticos</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>  <span class="at">check_for_updates =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>  <span class="at">send_crash_reports =</span> <span class="cn">TRUE</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 
 
 </section>
 
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-date-sort="1744599600000" data-listing-file-modified-sort="1744656274161" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="41">
-<div class="thumbnail">
-<p><a href="./posts/analise-descritiva/index.html" class="no-external"></a></p><a href="./posts/analise-descritiva/index.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./posts/analise-descritiva/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/analise-descritiva/index.html" class="no-external">Análise descritiva com dplyr</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/analise-descritiva/index.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./posts/analise-descritiva/index.html" class="no-external">Neste tutorial, exploramos como utilizar o pacote <code>dplyr</code> para realizar uma análise descritiva eficiente de conjuntos de dados.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/analise-descritiva/index.html" class="no-external">
-<div class="listing-date">
-Apr 14, 2025
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="rstudio,R" data-listing-date-sort="1744599600000" data-listing-file-modified-sort="1744631632020" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="122">
-<div class="thumbnail">
-<p><a href="./posts/preferencias-rstudio/index.html" class="no-external"></a></p><a href="./posts/preferencias-rstudio/index.html" class="no-external">
-<p><img loading="lazy" src="./posts/preferencias-rstudio/ajuste_rstudio.png" class="thumbnail-image"></p>
-</a><p><a href="./posts/preferencias-rstudio/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/preferencias-rstudio/index.html" class="no-external">Preferências do RStudio</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/preferencias-rstudio/index.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./posts/preferencias-rstudio/index.html" class="no-external">Abaixo, apresento um conjunto enxuto e eficaz de configurações que recomendo aplicar à IDE RStudio, com foco em aumentar sua produtividade, melhorar a leitura do código e…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/preferencias-rstudio/index.html" class="no-external">
-<div class="listing-date">
-Apr 14, 2025
-</div>
-<div class="listing-author">
-Evaldo Silva
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="code,analysis,R" data-listing-date-sort="1744513200000" data-listing-file-modified-sort="1744639238601" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="399">
-<div class="thumbnail">
-<p><a href="./posts/publicando-site-github/index.html" class="no-external"></a></p><a href="./posts/publicando-site-github/index.html" class="no-external">
-<p><img loading="lazy" src="./posts/publicando-site-github/github-pages.png" class="thumbnail-image"></p>
-</a><p><a href="./posts/publicando-site-github/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/publicando-site-github/index.html" class="no-external">Publicando Site Quarto no Github</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/publicando-site-github/index.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./posts/publicando-site-github/index.html" class="no-external">Publicar um site feito com Quarto usando o GitHub Pages é uma maneira prática e gratuita de compartilhar seu conteúdo online. Abaixo, apresento um passo a passo simples e…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/publicando-site-github/index.html" class="no-external">
-<div class="listing-date">
-Apr 13, 2025
-</div>
-<div class="listing-author">
-Evaldo Silva
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-listing-date-sort="1744340400000" data-listing-file-modified-sort="1744663774568" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="904">
-<div class="thumbnail">
-<p><a href="./posts/instalacao-r-rtools/index.html" class="no-external"></a></p><a href="./posts/instalacao-r-rtools/index.html" class="no-external">
-<p><img loading="lazy" src="./posts/instalacao-r-rtools/logos_R_Rstudio.png" class="thumbnail-image"></p>
-</a><p><a href="./posts/instalacao-r-rtools/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/instalacao-r-rtools/index.html" class="no-external">Instalando o R, RStudio e Rtools</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/instalacao-r-rtools/index.html" class="no-external">Criando um ambiente eficiente para uso da Linguagem R</a>
-</div>
-<div class="listing-description">
-<a href="./posts/instalacao-r-rtools/index.html" class="no-external">A Linguagem de Programação R é uma ferramenta essencial para análise de dados e estatística, sendo amplamente utilizada por cientistas e pesquisadores. Para maximizar sua…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/instalacao-r-rtools/index.html" class="no-external">
-<div class="listing-date">
-Apr 11, 2025
-</div>
-<div class="listing-author">
-Evaldo Silva
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-listing-date-sort="1744254000000" data-listing-file-modified-sort="1744656262843" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="24">
-<div class="thumbnail">
-<p><a href="./posts/regressao-linear/index.html" class="no-external"></a></p><a href="./posts/regressao-linear/index.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./posts/regressao-linear/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/regressao-linear/index.html" class="no-external">Regressão linear com ggplot2 e broom</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/regressao-linear/index.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./posts/regressao-linear/index.html" class="no-external">Veja como ajustar um modelo linear e extrair seus parâmetros com <code>broom</code>, visualizando os resultados com <code>ggplot2</code>.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/regressao-linear/index.html" class="no-external">
-<div class="listing-date">
-Apr 10, 2025
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="5" data-listing-date-sort="1743303600000" data-listing-file-modified-sort="1744656364345" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="22">
-<div class="thumbnail">
-<p><a href="./posts/anova/index.html" class="no-external"></a></p><a href="./posts/anova/index.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./posts/anova/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/anova/index.html" class="no-external">ANOVA com aov() e emmeans</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/anova/index.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./posts/anova/index.html" class="no-external">Veja como aplicar ANOVA com <code>aov()</code> e realizar comparações múltiplas com <code>emmeans</code>.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/anova/index.html" class="no-external">
-<div class="listing-date">
-Mar 30, 2025
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -807,7 +661,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
 <p>© 2025 ClubeR - UFPA/Bragança</p>
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/astuciasnor/cluber/edit/main/blog.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/astuciasnor/cluber/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/astuciasnor/cluber/edit/main/docs/posts/preferencias-rstudio/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/astuciasnor/cluber/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
