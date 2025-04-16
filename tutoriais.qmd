@@ -10,7 +10,6 @@ Navegue pelos conteúdos organizados por área de interesse.
 ## 📦 Instalação e Configuração do Ambiente
 
 -   [Instalação do R, RStudio e Rtools](posts/instalacao-r-rtools/index.qmd)
-
 -   [Ajustes de Preferências da IDE RStudio](posts/preferencias-rstudio/index.qmd)
 
 ## 🧪 Estatística com R

@@ -158,15 +158,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#como-publicar-um-site-quarto-no-github-pages" id="toc-como-publicar-um-site-quarto-no-github-pages" class="nav-link active" data-scroll-target="#como-publicar-um-site-quarto-no-github-pages"><span class="header-section-number">1</span> 🚀 Como Publicar um Site Quarto no GitHub Pages</a>
   <ul class="collapse">
   <li><a href="#pré-requisitos" id="toc-pré-requisitos" class="nav-link" data-scroll-target="#pré-requisitos"><span class="header-section-number">1.1</span> 🌐 Pré-requisitos</a></li>
-  <li><a href="#criar-o-repositório-no-github" id="toc-criar-o-repositório-no-github" class="nav-link" data-scroll-target="#criar-o-repositório-no-github"><span class="header-section-number">1.2</span> 🛠️ 1. Criar o repositório no GitHub</a></li>
-  <li><a href="#clonar-o-repositório-via-rstudio" id="toc-clonar-o-repositório-via-rstudio" class="nav-link" data-scroll-target="#clonar-o-repositório-via-rstudio"><span class="header-section-number">1.3</span> 💻 2. Clonar o repositório via RStudio</a></li>
-  <li><a href="#copiar-os-arquivos-do-seu-blogsite" id="toc-copiar-os-arquivos-do-seu-blogsite" class="nav-link" data-scroll-target="#copiar-os-arquivos-do-seu-blogsite"><span class="header-section-number">1.4</span> 📁 3. Copiar os arquivos do seu blog/site</a></li>
-  <li><a href="#ajustar-o-arquivo-_quarto.yml" id="toc-ajustar-o-arquivo-_quarto.yml" class="nav-link" data-scroll-target="#ajustar-o-arquivo-_quarto.yml"><span class="header-section-number">1.5</span> ⚙️ 4. Ajustar o arquivo <code>_quarto.yml</code></a></li>
-  <li><a href="#verificar-o-arquivo-.gitignore" id="toc-verificar-o-arquivo-.gitignore" class="nav-link" data-scroll-target="#verificar-o-arquivo-.gitignore"><span class="header-section-number">1.6</span> 🚫 5. Verificar o arquivo <code>.gitignore</code></a></li>
-  <li><a href="#renderizar-o-site-localmente" id="toc-renderizar-o-site-localmente" class="nav-link" data-scroll-target="#renderizar-o-site-localmente"><span class="header-section-number">1.7</span> 🧪 6. Renderizar o site localmente</a></li>
-  <li><a href="#commit-e-push-para-o-github" id="toc-commit-e-push-para-o-github" class="nav-link" data-scroll-target="#commit-e-push-para-o-github"><span class="header-section-number">1.8</span> 🟢 7. Commit e push para o GitHub</a></li>
-  <li><a href="#configurar-o-github-pages" id="toc-configurar-o-github-pages" class="nav-link" data-scroll-target="#configurar-o-github-pages"><span class="header-section-number">1.9</span> ⚙️ 8. Configurar o GitHub Pages</a></li>
-  <li><a href="#pronto" id="toc-pronto" class="nav-link" data-scroll-target="#pronto"><span class="header-section-number">1.10</span> 🎉 9. Pronto!</a></li>
+  <li><a href="#criar-o-repositório-no-github" id="toc-criar-o-repositório-no-github" class="nav-link" data-scroll-target="#criar-o-repositório-no-github"><span class="header-section-number">1.2</span> 🛠️ Criar o repositório no GitHub</a></li>
+  <li><a href="#criar-seu-website-ou-blog-no-rstudio" id="toc-criar-seu-website-ou-blog-no-rstudio" class="nav-link" data-scroll-target="#criar-seu-website-ou-blog-no-rstudio"><span class="header-section-number">1.3</span> 💻 Criar seu website ou blog no RStudio</a></li>
+  <li><a href="#ajustar-o-arquivo-_quarto.yml" id="toc-ajustar-o-arquivo-_quarto.yml" class="nav-link" data-scroll-target="#ajustar-o-arquivo-_quarto.yml"><span class="header-section-number">1.4</span> 🔧 Ajustar o arquivo <code>_quarto.yml</code></a></li>
+  <li><a href="#renderizar-o-site-localmente" id="toc-renderizar-o-site-localmente" class="nav-link" data-scroll-target="#renderizar-o-site-localmente"><span class="header-section-number">1.5</span> 🧪 Renderizar o site localmente</a></li>
+  <li><a href="#commit-e-push-para-o-github" id="toc-commit-e-push-para-o-github" class="nav-link" data-scroll-target="#commit-e-push-para-o-github"><span class="header-section-number">1.6</span> 🚀 Commit e push para o GitHub</a></li>
+  <li><a href="#configurar-o-github-pages" id="toc-configurar-o-github-pages" class="nav-link" data-scroll-target="#configurar-o-github-pages"><span class="header-section-number">1.7</span> ⚙️ Configurar o GitHub Pages</a></li>
+  <li><a href="#pronto" id="toc-pronto" class="nav-link" data-scroll-target="#pronto"><span class="header-section-number">1.8</span> 🎉 Pronto!</a></li>
+  <li><a href="#editar-o-arquivo-.gitignore-e-adicionar-o-arquivo-license.md" id="toc-editar-o-arquivo-.gitignore-e-adicionar-o-arquivo-license.md" class="nav-link" data-scroll-target="#editar-o-arquivo-.gitignore-e-adicionar-o-arquivo-license.md"><span class="header-section-number">1.9</span> 📝 Editar o arquivo <code>.gitignore</code> e adicionar o arquivo <code>LICENSE.md</code></a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/astuciasnor/cluber/edit/main/docs/posts/publicando-site-github/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/astuciasnor/cluber/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -220,91 +219,184 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Publicar um site feito com Quarto usando o GitHub Pages é uma maneira prática e gratuita de compartilhar seu conteúdo online. Abaixo, apresento um passo a passo simples e eficaz para configurar tudo corretamente.</p>
 <section id="pré-requisitos" class="level3" data-number="1.1">
 <h3 data-number="1.1" class="anchored" data-anchor-id="pré-requisitos"><span class="header-section-number">1.1</span> 🌐 Pré-requisitos</h3>
-<p>Antes de começar, certifique-se de ter:</p>
+<p>Antes de começar, verifique se você possui os seguintes itens instalados e configurados:</p>
 <ul>
-<li>Uma conta ativa no <a href="https://github.com">GitHub</a></li>
-<li>O Git instalado e configurado no seu sistema</li>
-<li>O R, RStudio e o pacote <code>quarto</code> instalados</li>
+<li>✅ Uma conta ativa no <a href="https://github.com">GitHub</a></li>
+<li>✅ O <strong>Git</strong> instalado e configurado no seu sistema</li>
+<li>✅ O <strong>R</strong>, <strong>RStudio</strong> e o pacote <strong><code>quarto</code></strong> devidamente instalados</li>
 </ul>
 </section>
 <section id="criar-o-repositório-no-github" class="level3" data-number="1.2">
-<h3 data-number="1.2" class="anchored" data-anchor-id="criar-o-repositório-no-github"><span class="header-section-number">1.2</span> 🛠️ 1. Criar o repositório no GitHub</h3>
+<h3 data-number="1.2" class="anchored" data-anchor-id="criar-o-repositório-no-github"><span class="header-section-number">1.2</span> 🛠️ Criar o repositório no GitHub</h3>
 <ol type="1">
-<li>Acesse <a href="https://github.com">github.com</a> e clique em <strong>New Repository</strong>.</li>
-<li>Dê ao repositório o nome exato:<br>
-<strong><code>nome-de-usuario.github.io</code></strong><br>
-<em>(substitua pelo seu nome de usuário real do GitHub)</em></li>
-<li>Marque as opções: - ✅ Adicionar <code>.gitignore</code> (selecione <code>R</code>) - ✅ Escolher uma licença (como MIT)</li>
+<li>Acesse <a href="https://github.com">github.com</a> e clique em <strong>“New Repository”</strong> (ou “Novo repositório”).</li>
+<li>Escolha um nome para o seu repositório:</li>
 </ol>
-</section>
-<section id="clonar-o-repositório-via-rstudio" class="level3" data-number="1.3">
-<h3 data-number="1.3" class="anchored" data-anchor-id="clonar-o-repositório-via-rstudio"><span class="header-section-number">1.3</span> 💻 2. Clonar o repositório via RStudio</h3>
-<ol type="1">
-<li><p>No RStudio, vá em:<br>
-<code>File &gt; New Project &gt; Version Control &gt; Git</code></p></li>
-<li><p>Cole a URL do repositório, algo como:<br>
-<code>https://github.com/nome-de-usuario/nome-de-usuario.github.io.git</code></p></li>
-<li><p>Escolha uma pasta local e clique em <strong>Create Project</strong>.</p></li>
-</ol>
-</section>
-<section id="copiar-os-arquivos-do-seu-blogsite" class="level3" data-number="1.4">
-<h3 data-number="1.4" class="anchored" data-anchor-id="copiar-os-arquivos-do-seu-blogsite"><span class="header-section-number">1.4</span> 📁 3. Copiar os arquivos do seu blog/site</h3>
-<ol type="1">
-<li>Copie os arquivos e pastas do seu projeto Quarto (ex: <code>my_blog/</code>) para dentro da pasta do novo repositório. Você pode ver <strong>como criar um Blog em Quarto no Rstudio</strong> clicando neste vídeo <a href="https://www.youtube.com/watch?v=OlvO-EG-P60" target="_blank">tutorial</a> do youtube.</li>
-<li>⚠️ Não sobrescreva arquivos já existentes, como <code>.gitignore</code> ou o <code>.Rproj</code>.</li>
-<li>Certifique-se de que o nome do arquivo de projeto seja:<br>
-<strong><code>nome-de-usuario.github.io.Rproj</code></strong></li>
-</ol>
-</section>
-<section id="ajustar-o-arquivo-_quarto.yml" class="level3" data-number="1.5">
-<h3 data-number="1.5" class="anchored" data-anchor-id="ajustar-o-arquivo-_quarto.yml"><span class="header-section-number">1.5</span> ⚙️ 4. Ajustar o arquivo <code>_quarto.yml</code></h3>
-<ol type="1">
-<li>Localize e abra o arquivo <code>_quarto.yml</code> do seu projeto.</li>
-<li><strong>Adicione a linha abaixo de <code>type:</code></strong> para que a saída vá para a pasta <code>docs</code>:</li>
-</ol>
-<p><img src="images/yml.png" class="img-fluid"></p>
-</section>
-<section id="verificar-o-arquivo-.gitignore" class="level3" data-number="1.6">
-<h3 data-number="1.6" class="anchored" data-anchor-id="verificar-o-arquivo-.gitignore"><span class="header-section-number">1.6</span> 🚫 5. Verificar o arquivo <code>.gitignore</code></h3>
 <ul>
-<li>Verifique se a pasta <code>docs/</code> não está listada no arquivo <code>.gitignore</code>.</li>
-<li>Caso esteja, remova a linha com <code>docs/</code>.</li>
+<li>Para um site ou blog comum:
+<ul>
+<li>👉 <code>meu_website</code>, <code>meu_blog</code> ou outro nome de sua preferência</li>
+</ul></li>
+<li>Para uma página pessoal principal (formato recomendado pelo GitHub):
+<ul>
+<li>👉 <code>nome-de-usuario.github.io</code><br>
+<em>(substitua <code>nome-de-usuario</code> pelo seu nome real no GitHub, por exemplo: <code>astuciasnor.github.io</code>)</em></li>
+</ul></li>
+</ul>
+<ol start="3" type="1">
+<li><strong>Importante:</strong><br>
+Não marque nenhuma opção como <strong>“Add a README file”</strong>, <strong>“.gitignore”</strong> ou <strong>“LICENSE”</strong> neste momento.<br>
+Esses arquivos serão criados e configurados posteriormente, conforme as boas práticas de versionamento com Quarto.</li>
+</ol>
+</section>
+<section id="criar-seu-website-ou-blog-no-rstudio" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="criar-seu-website-ou-blog-no-rstudio"><span class="header-section-number">1.3</span> 💻 Criar seu website ou blog no RStudio</h3>
+<p>No RStudio, siga os passos abaixo para criar seu projeto Quarto:</p>
+<ol type="1">
+<li>Vá até o menu: <strong>File &gt; New Project &gt; Quarto Website</strong> <em>(ou <strong>Quarto Blog</strong>, se for o caso)</em></li>
+<li>Dê ao projeto <strong>o mesmo nome do repositório criado no GitHub</strong>, para manter a consistência. Você pode usar, por exemplo:</li>
+</ol>
+<ul>
+<li><p>👉 <code>meu_website</code> <em>(para um site genérico)</em></p></li>
+<li><p>👉 <code>meu_blog</code> <em>(para blogs com estrutura de postagens)</em></p></li>
+<li><p>👉 <code>nome-de-usuario.github.io</code> <em>(para sua página pessoal principal, substituindo pelo seu nome de usuário real do GitHub — ex: <code>astuciasnor.github.io</code>)</em></p></li>
+</ul>
+<ol type="1">
+<li>Escolha o <strong>diretório local</strong> onde o projeto será salvo no seu computador.</li>
+<li>Clique em <strong>Create Project</strong> para finalizar a criação.</li>
+</ol>
+<p>O RStudio abrirá automaticamente o novo projeto com os arquivos iniciais (<code>index.qmd</code>, <code>_quarto.yml</code> etc.) prontos para edição e publicação.</p>
+</section>
+<section id="ajustar-o-arquivo-_quarto.yml" class="level3" data-number="1.4">
+<h3 data-number="1.4" class="anchored" data-anchor-id="ajustar-o-arquivo-_quarto.yml"><span class="header-section-number">1.4</span> 🔧 Ajustar o arquivo <code>_quarto.yml</code></h3>
+<ol type="1">
+<li><p>No RStudio, localize e abra o arquivo <strong><code>_quarto.yml</code></strong> do seu projeto.</p></li>
+<li><p>Adicione a linha <code>output-dir: docs</code> logo abaixo da linha <code>type: website</code>, conforme o exemplo abaixo:</p></li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">project:</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="ex">type:</span> website</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="ex">output-dir:</span> docs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="3" type="1">
+<li>Salve o arquivo (<code>Ctrl + S</code> ou <code>File &gt; Save</code>).</li>
+</ol>
+<p>Essa configuração define que os arquivos gerados pelo Quarto serão salvos na pasta <code>docs</code>, que é a exigência do GitHub Pages para publicar seu site.</p>
+</section>
+<section id="renderizar-o-site-localmente" class="level3" data-number="1.5">
+<h3 data-number="1.5" class="anchored" data-anchor-id="renderizar-o-site-localmente"><span class="header-section-number">1.5</span> 🧪 Renderizar o site localmente</h3>
+<p>Para gerar e visualizar seu site Quarto no navegador, você pode fazer isso de duas formas:</p>
+<ol type="1">
+<li><strong>Clique no botão ▶️ “Render”</strong> no canto superior direito do RStudio,<br>
+<strong>ou</strong></li>
+<li>Execute o comando abaixo diretamente no <strong>console</strong> do RStudio:</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>quarto<span class="sc">::</span><span class="fu">quarto_render</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Após a renderização:</p>
+<ul>
+<li>A <strong>página HTML</strong> do seu site será aberta automaticamente no navegador.</li>
+<li>Verifique se a pasta <strong><code>docs/</code></strong> foi criada na aba <strong>Files</strong> do RStudio. É dentro dela que o Quarto salva os arquivos do site que serão enviados ao GitHub.</li>
 </ul>
 </section>
-<section id="renderizar-o-site-localmente" class="level3" data-number="1.7">
-<h3 data-number="1.7" class="anchored" data-anchor-id="renderizar-o-site-localmente"><span class="header-section-number">1.7</span> 🧪 6. Renderizar o site localmente</h3>
-<p>No console do RStudio, execute:</p>
+<section id="commit-e-push-para-o-github" class="level3" data-number="1.6">
+<h3 data-number="1.6" class="anchored" data-anchor-id="commit-e-push-para-o-github"><span class="header-section-number">1.6</span> 🚀 Commit e push para o GitHub</h3>
+<p>Após renderizar seu site localmente, é hora de enviar os arquivos para o repositório no GitHub.</p>
+<p>Você pode fazer isso <strong>pelo terminal</strong> (integrado ao RStudio) ou pela <strong>interface Git do próprio RStudio</strong>.</p>
+<section id="comandos-via-terminal" class="level4" data-number="1.6.1">
+<h4 data-number="1.6.1" class="anchored" data-anchor-id="comandos-via-terminal"><span class="header-section-number">1.6.1</span> ✅ Comandos via terminal</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>quarto<span class="sc">::</span><span class="fu">quarto_render</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Adiciona o repositório remoto (escolha um dos dois conforme seu caso)</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote add origin https://github.com/nome-de-usuario.github.io.git</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ou</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote add origin https://github.com/nome-de-usuario/my_page.git</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Define o nome da branch principal como 'main'</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-M</span> main</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Adiciona todos os arquivos ao controle de versão</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Cria um commit com uma mensagem</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"adicionando site"</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Envia os arquivos para o GitHub</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-u</span> origin main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Isso criará a pasta <code>docs/</code> com os arquivos HTML renderizados.</p>
+<blockquote class="blockquote">
+<p><strong>⚠️ Substitua <code>nome-de-usuario</code> pelo seu nome real no GitHub.</strong> Exemplo: <code>https://github.com/astuciasnor/astuciasnor.github.io.git</code></p>
+</blockquote>
 </section>
-<section id="commit-e-push-para-o-github" class="level3" data-number="1.8">
-<h3 data-number="1.8" class="anchored" data-anchor-id="commit-e-push-para-o-github"><span class="header-section-number">1.8</span> 🟢 7. Commit e push para o GitHub</h3>
-<p>No terminal ou via interface Git do RStudio:</p>
-<p><img src="images/comando-git.png" class="img-fluid"></p>
-</section>
-<section id="configurar-o-github-pages" class="level3" data-number="1.9">
-<h3 data-number="1.9" class="anchored" data-anchor-id="configurar-o-github-pages"><span class="header-section-number">1.9</span> ⚙️ 8. Configurar o GitHub Pages</h3>
-<ol type="1">
-<li><p>No seu repositório GitHub, vá em:<br>
-<code>Settings &gt; Pages</code></p></li>
-<li><p>Em <strong>Source</strong>, selecione:</p>
+<section id="observações-importantes" class="level4" data-number="1.6.2">
+<h4 data-number="1.6.2" class="anchored" data-anchor-id="observações-importantes"><span class="header-section-number">1.6.2</span> 💡 Observações importantes</h4>
 <ul>
-<li><p><strong>Branch:</strong> <code>main</code></p></li>
-<li><p><strong>Folder:</strong> <code>/docs</code></p></li>
-<li><p>Clique em <strong>Save</strong></p></li>
-</ul></li>
+<li>Certifique-se de que o projeto foi <strong>inicializado com Git</strong> (ícone Git no canto superior direito do RStudio).</li>
+<li>Se o projeto já foi conectado a um repositório remoto, <strong>não execute novamente <code>git remote add origin ...</code></strong>, pois isso geraria conflito.</li>
+<li>Após o <code>git push</code>, os arquivos do seu site estarão publicados no GitHub.</li>
+<li>Após o <code>git push</code>, os arquivos do seu site estarão publicados no GitHub.</li>
+</ul>
+</section>
+</section>
+<section id="configurar-o-github-pages" class="level3" data-number="1.7">
+<h3 data-number="1.7" class="anchored" data-anchor-id="configurar-o-github-pages"><span class="header-section-number">1.7</span> ⚙️ Configurar o GitHub Pages</h3>
+<p>Agora que os arquivos do site estão no repositório, é hora de ativar o GitHub Pages para publicá-lo na web:</p>
+<ol type="1">
+<li>Acesse seu repositório no GitHub.</li>
+<li>Vá para a aba <strong>Settings</strong> (Configurações) — ela fica no canto superior direito do repositório.</li>
+<li>No menu lateral, clique em <strong>Pages</strong> (ou procure por “Pages” na barra de busca).</li>
+<li>Em <strong>Source</strong>, configure os seguintes valores: - <strong>Branch:</strong> <code>main</code></li>
+</ol>
+<pre><code>-    **Folder:** `/docs`</code></pre>
+<ol start="5" type="1">
+<li>Clique no botão <strong>Save</strong>.</li>
 </ol>
 </section>
-<section id="pronto" class="level3" data-number="1.10">
-<h3 data-number="1.10" class="anchored" data-anchor-id="pronto"><span class="header-section-number">1.10</span> 🎉 9. Pronto!</h3>
-<p>Aguarde alguns segundos e seu site estará acessível em:</p>
+<section id="pronto" class="level3" data-number="1.8">
+<h3 data-number="1.8" class="anchored" data-anchor-id="pronto"><span class="header-section-number">1.8</span> 🎉 Pronto!</h3>
+<p>🔄 Após alguns segundos, seu site estará <strong>publicado</strong> e acessível em qualquer navegador. O endereço depende do nome que você deu ao repositório no GitHub:</p>
+<ul>
+<li>🔗 <code>https://nome-de-usuario.github.io/meu_website</code></li>
+</ul>
+<pre><code>(quando o nome do repositório **é diferente** do seu nome de usuário)</code></pre>
+<ul>
+<li>🔗 <code>https://nome-de-usuario.github.io/</code></li>
+</ul>
+<pre><code>(quando o repositório se chama **nome-de-usuario.github.io**)</code></pre>
 <blockquote class="blockquote">
-<p><strong>https://nome-de-usuario.github.io/</strong></p>
+<p>Substitua <code>nome-de-usuario</code> pelo seu nome real no GitHub.<br>
+Exemplo: <code>https://astuciasnor.github.io/</code></p>
 </blockquote>
+<p>Parabéns! 🥳 Seu site com <strong>Quarto</strong> e <strong>GitHub Pages</strong> já está no ar.</p>
+</section>
+<section id="editar-o-arquivo-.gitignore-e-adicionar-o-arquivo-license.md" class="level3" data-number="1.9">
+<h3 data-number="1.9" class="anchored" data-anchor-id="editar-o-arquivo-.gitignore-e-adicionar-o-arquivo-license.md"><span class="header-section-number">1.9</span> 📝 Editar o arquivo <code>.gitignore</code> e adicionar o arquivo <code>LICENSE.md</code></h3>
+<p>Como etapa final, vamos ajustar o arquivo <code>.gitignore</code> e criar a licença do projeto:</p>
+<section id="editar-o-.gitignore" class="level4" data-number="1.9.1">
+<h4 data-number="1.9.1" class="anchored" data-anchor-id="editar-o-.gitignore"><span class="header-section-number">1.9.1</span> ✏️ Editar o <code>.gitignore</code>:</h4>
+<ol type="1">
+<li>Acesse o repositório no <strong>GitHub</strong> e localize o arquivo <code>.gitignore</code>.</li>
+<li>Clique no nome do arquivo e depois no ícone de lápis ✏️ para editá-lo.</li>
+<li>Substitua o conteúdo por um modelo apropriado para projetos em <strong>R</strong>.</li>
+<li><strong>Remova a linha <code>/docs</code></strong>, se estiver presente (ela impediria a publicação do site).</li>
+<li>Escreva uma mensagem de commit explicando a alteração e clique em <strong>Commit changes</strong>.</li>
+</ol>
+</section>
+<section id="adicionar-o-arquivo-de-licença" class="level4" data-number="1.9.2">
+<h4 data-number="1.9.2" class="anchored" data-anchor-id="adicionar-o-arquivo-de-licença"><span class="header-section-number">1.9.2</span> 📄 Adicionar o arquivo de licença:</h4>
+<ol type="1">
+<li>No repositório, clique em <strong>“Add file” &gt; “Create new file”</strong>.</li>
+<li>Nomeie o novo arquivo como: <code>LICENSE.md</code></li>
+<li>Insira o conteúdo da licença desejada (por exemplo, a <strong>MIT License</strong>, disponível como sugestão no GitHub).</li>
+<li>Clique em <strong>Commit new file</strong> para salvar.</li>
+</ol>
+</section>
+<section id="atualizar-o-repositório-local" class="level4" data-number="1.9.3">
+<h4 data-number="1.9.3" class="anchored" data-anchor-id="atualizar-o-repositório-local"><span class="header-section-number">1.9.3</span> 🔄 Atualizar o repositório local:</h4>
+<p>Após essas alterações, volte ao RStudio e clique no botão <strong>Pull</strong> na aba <strong>Git</strong> para sincronizar o repositório local com o remoto.</p>
 
 
+</section>
 </section>
 </section>
 
