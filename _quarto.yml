@@ -4,12 +4,14 @@ project:
 
 website:
   title: "ClubeR"
+  favicon: logo-cluber.png
   site-url: https://astuciasnor.github.io/cluber
   repo-url: https://github.com/astuciasnor/cluber
   repo-actions: [edit, issue]
   page-navigation: true
   page-footer: "© 2025 ClubeR - UFPA/Bragança"
   navbar:
+    logo: logo-cluber.png
     left:
       - href: index.qmd
         text: Início
@@ -22,7 +24,7 @@ website:
 
 format:
   html:
-    theme: cosmo
+    theme: journal
     toc: true
     number-sections: true
     code-copy: true
