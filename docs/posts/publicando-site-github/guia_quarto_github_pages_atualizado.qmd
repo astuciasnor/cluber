@@ -1,12 +1,7 @@
 ---
 title: "Publicação de Website com Quarto e GitHub Pages"
-author: "Evaldo Silva"
-date: "2025-04-13"
-number-sections: false
 format: html
 ---
-
-![](github-pages.png){width="429"}
 
 Publicar um site com Quarto via GitHub Pages é uma forma simples e gratuita de compartilhar seu conteúdo online. Neste guia, seguimos um fluxo prático: criamos primeiro o repositório no GitHub, depois o projeto no RStudio com o mesmo nome, configuramos a pasta `docs` para publicação, e finalizamos com ajustes nos arquivos `.gitignore` e `LICENSE.md`.
 

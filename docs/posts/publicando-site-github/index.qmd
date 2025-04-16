@@ -1,124 +1,100 @@
 ---
-title: "Publicando Site Quarto no Github"
+title: "Publicação de Website com Quarto e GitHub Pages"
 author: "Evaldo Silva"
 date: "2025-04-13"
-categories: [code, analysis, R]
-image: "github-pages.png"
+number-sections: false
+format: html
 ---
 
-![](github-pages.png){fig-align="left" width="452"}
+![](github-pages.png){width="429"}
 
-## 🚀 Como Publicar um Site Quarto no GitHub Pages
+Publicar um site com Quarto via GitHub Pages é uma forma simples e gratuita de compartilhar seu conteúdo online. Neste guia, seguimos um fluxo prático: criamos primeiro o repositório no GitHub, depois o projeto no RStudio com o mesmo nome, configuramos a pasta `docs` para publicação, e finalizamos com ajustes nos arquivos `.gitignore` e `LICENSE.md`.
 
-Publicar um site feito com Quarto usando o GitHub Pages é uma maneira prática e gratuita de compartilhar seu conteúdo online. Abaixo, apresento um passo a passo simples e eficaz para configurar tudo corretamente.
-
-### 🌐 Pré-requisitos
+## 🌐 Pré-requisitos
 
 Antes de começar, verifique se você possui os seguintes itens instalados e configurados:
 
--   ✅ Uma conta ativa no [GitHub](https://github.com)
--   ✅ O **Git** instalado e configurado no seu sistema
+-   ✅ Uma conta ativa no [GitHub](https://github.com)\
+-   ✅ O **Git** instalado e configurado no seu sistema\
 -   ✅ O **R**, **RStudio** e o pacote **`quarto`** devidamente instalados
 
-### 🛠️ Criar o repositório no GitHub
+------------------------------------------------------------------------
 
-1.  Acesse [github.com](https://github.com) e clique em **"New Repository"** (ou "Novo repositório").
-2.  Escolha um nome para o seu repositório:
+## 🛠️ 1. Criar o repositório no GitHub
 
--   Para um site ou blog comum:
-    -   👉 `meu_website`, `meu_blog` ou outro nome de sua preferência
--   Para uma página pessoal principal (formato recomendado pelo GitHub):
-    -   👉 `nome-de-usuario.github.io`\
-        *(substitua `nome-de-usuario` pelo seu nome real no GitHub, por exemplo: `astuciasnor.github.io`)*
+1.  Acesse [github.com](https://github.com) e clique em **"New Repository"**.\
+2.  Dê ao repositório um dos seguintes nomes:
+    -   👉 `meu_website`, `meu_blog` ou outro nome livre
+    -   👉 `nome-de-usuario.github.io` *(para uma página pessoal principal — substitua pelo seu nome de usuário real do GitHub)*
+3.  Não marque opções como **README**, **.gitignore** ou **LICENSE**. Esses arquivos serão criados depois.
 
-3.  **Importante:**\
-    Não marque nenhuma opção como **"Add a README file"**, **".gitignore"** ou **"LICENSE"** neste momento.\
-    Esses arquivos serão criados e configurados posteriormente, conforme as boas práticas de versionamento com Quarto.
+------------------------------------------------------------------------
 
-### 💻 Criar seu website ou blog no RStudio
+## 💻 2. Criar seu website ou blog no RStudio
 
-Esta etapa pode ser feita antes da criação do repertório no Github. Por razões de boa prática de uso do Git, optamos por fazer primerio o repositório no Github.
+Embora seja possível iniciar o projeto diretamente no RStudio, optamos por criar primeiro o repositório no GitHub. Essa ordem segue boas práticas de versionamento, facilitando a integração entre o repositório remoto e o projeto local desde o início.
 
-Para criar seu website ou blog, siga os passos abaixo no RStudio para gerar automaticamente seu projeto Quarto:
-
-1.  Vá até o menu: **File \> New Project \> Quarto Website** *(ou **Quarto Blog**, se for o caso)*
-2.  Dê ao projeto **o mesmo nome do repositório criado no GitHub**, para manter a consistência. Você pode usar, por exemplo:
-
--   👉 `meu_website` *(para um site genérico)*
-
--   👉 `meu_blog` *(para blogs com estrutura de postagens)*
-
--   👉 `nome-de-usuario.github.io` *(para sua página pessoal principal, substituindo pelo seu nome de usuário real do GitHub — ex: `astuciasnor.github.io`)*
-
-1.  Escolha o **diretório local** onde o projeto será salvo no seu computador.
-2.  Clique em **Create Project** para finalizar a criação.
+1.  Vá até: **File \> New Project \> Quarto Website** (ou **Quarto Blog**)
+2.  Dê ao projeto o mesmo nome do repositório criado no GitHub:
+    -   `meu_website`, `meu_blog`, ou `nome-de-usuario.github.io`
+3.  Escolha o diretório onde o projeto será salvo.
+4.  Clique em **Create Project**.
 
 O RStudio abrirá automaticamente o novo projeto com os arquivos iniciais (`index.qmd`, `_quarto.yml` etc.) prontos para edição e publicação.
 
-### 🔧 Ajustar o arquivo `_quarto.yml`
+------------------------------------------------------------------------
 
-1.  No RStudio, localize e abra o arquivo **`_quarto.yml`** do seu projeto.
+## 🔧 3. Ajustar o arquivo `_quarto.yml`
 
-2.  Adicione a linha `output-dir: docs` logo abaixo da linha `type: website`, conforme o exemplo abaixo:
+Abra o arquivo `_quarto.yml` e edite-o para que fique assim:
 
-```{bash, eval = F}
+``` yaml
 project:
   type: website
   output-dir: docs
 ```
 
-3.  Salve o arquivo (`Ctrl + S` ou `File > Save`).
+Salve o arquivo (`Ctrl + S`).
 
-Essa configuração define que os arquivos gerados pelo Quarto serão salvos na pasta `docs`, que é a exigência do GitHub Pages para publicar seu site.
+Essa configuração define que os arquivos gerados pelo Quarto serão salvos na pasta `docs`, que é a exigência do GitHub Pages para publicar seu site e não a pasta `_sites`.
 
-### 🧪 Renderizar o site localmente
+------------------------------------------------------------------------
 
-Para gerar e visualizar seu site Quarto no navegador, você pode fazer isso de duas formas:
+## 🧪 4. Renderizar o site localmente
 
-1.  **Clique no botão ▶️ "Render"** no canto superior direito do RStudio,\
-    **ou**
-2.  Execute o comando abaixo diretamente no **console** do RStudio:
+No console do RStudio ou clicando no botão ▶️ **Render do** no `index.qmd`, execute:
 
-```{r}
+``` r
 #| eval: false
 #| echo: true
 quarto::quarto_render()
 ```
 
-Após a renderização:
+O site será gerado e aberto no navegador. Verifique se a pasta `docs/` foi criada na aba **Files**.
 
--   A **página HTML** do seu site será aberta automaticamente no navegador.
--   Verifique se a pasta **`docs/`** foi criada na aba **Files** do RStudio. É dentro dela que o Quarto salva os arquivos do site que serão enviados ao GitHub.
+------------------------------------------------------------------------
 
-### 🚀 Commit e push para o GitHub
+## 🚀 5. Commit e push para o GitHub
 
-Após renderizar seu site localmente, é hora de enviar os arquivos para o repositório no GitHub. Você pode fazer isso **pelo terminal** (integrado ao RStudio) ou pela **interface Git do próprio RStudio**.
+Após renderizar seu site localmente, é hora de enviar os arquivos para o repositório no GitHub. Você pode fazer isso **pelo terminal** (integrado ao RStudio) ou pela **interface Git do próprio RStudio**. Siga as etapas seguintes:
 
-#### ✅ Comandos via terminal
+### ✅ 5.1 Copiar o link do repositório no GitHub
 
-Antes de rodar os comandos abaixo, você precisa copiar o link do seu repositório no GitHub. Para isso:
+1.  Vá até o repositório no GitHub.
+2.  Clique no botão verde **Code**.
+3.  Copie o link que aparece na aba **HTTPS** (ex: `https://github.com/seu-usuario/seu-repositorio.git`)
 
-1.   Vá até a página do seu repositório no [GitHub](https://github.com).
+### ✅ 5.2 Comandos via terminal
 
-2.   Clique no botão verde **Code** (localizado acima da lista de arquivos).
+Depois de copiar o link HTTPS do seu repositório no GitHub, volte ao terminal do RStudio e digite o seguinte comando:
 
-3.   Copie o link que aparece na aba **HTTPS**, como no exemplo abaixo:
-
-```{arduino, eval =F}
-https://github.com/seu-usuario/seu-repositorio.git
-```
-
-undefined
-
-Depois de copiar o link HTTPS do seu repositório no GitHub, **volte ao terminal do RStudio** e digite o seguinte comando:
-
-```{bash, eval = F}
+``` bash
 git remote add origin
 ```
 
 Em seguida, **cole o link copiado logo após esse comando**, ficando assim:
 
-```{bash, eval = F}
+``` bash
 # Exemplo 1 — para página pessoal
 git remote add origin https://github.com/nome-de-usuario.github.io.git
 
@@ -126,88 +102,57 @@ git remote add origin https://github.com/nome-de-usuario.github.io.git
 git remote add origin https://github.com/nome-de-usuario/my_page.git
 ```
 
-📌 Lembre-se de substituir `nome-de-usuario` pelo seu usuário real no GitHub, e `my_page` pelo nome do seu repositório.
+> 📌 Substitua `nome-de-usuario` pelo seu usuário real no GitHub.
 
-4.   Execute os comandos abaixo no terminal para preparar e enviar os arquivos ao Github:
+Depois, continue com os comandos:
 
-```{bash, eval = F}
-# Define o nome da branch principal como 'main'
+``` bash
 git branch -M main
-
-# Adiciona todos os arquivos ao controle de versão
 git add .
-
-# Cria um commit com uma mensagem
 git commit -m "adicionando site"
-
-# Envia os arquivos para o GitHub
 git push -u origin main
 ```
 
-#### 💡 Observações importantes
+------------------------------------------------------------------------
 
--   Certifique-se de que o projeto foi **inicializado com Git** (ícone Git no canto superior direito do RStudio).
-
--   Se o projeto já foi conectado a um repositório remoto, **não execute novamente `git remote add origin ...`**, pois isso geraria conflito.
-
--   Após o `git push`, os arquivos do seu site estarão publicados no GitHub.
-
-### ⚙️ Configurar o GitHub Pages
+## ⚙️ 6. Configurar o GitHub Pages
 
 Agora que os arquivos do site estão no repositório, é hora de ativar o GitHub Pages para publicá-lo na web:
 
-1.  Acesse seu repositório no GitHub.
-2.  Vá para a aba **Settings** (Configurações) — ela fica no canto superior direito do repositório.
-3.  No menu lateral, clique em **Pages** (ou procure por “Pages” na barra de busca).
-4.  Em **Source**, configure os seguintes valores:
+1.  No repositório, vá em **Settings \> Pages**
+2.  Em **Source**, selecione:
     -   **Branch:** `main`
     -   **Folder:** `/docs`
+3.  Clique em **Save**
 
-<!-- -->
+------------------------------------------------------------------------
 
-5.  Clique no botão **Save**.
+## 🎉 7. Pronto!
 
-### 🎉 Pronto!
-
-🔄 Após alguns segundos, seu site estará **publicado** e acessível em qualquer navegador. O endereço depende do nome que você deu ao repositório no GitHub:
+Após alguns segundos, seu site estará **publicado** e acessível:
 
 -   🔗 `https://nome-de-usuario.github.io/meu_website`
+-   🔗 `https://nome-de-usuario.github.io/` *(se for um site pessoal)*
 
-    (quando o nome do repositório **é diferente** do seu nome de usuário)
+> Exemplo: `https://astuciasnor.github.io/`
 
-<!-- -->
+------------------------------------------------------------------------
 
--   🔗 `https://nome-de-usuario.github.io/`
+## 📝 8. Editar o `.gitignore` e adicionar o `LICENSE.md`
 
-    (quando o repositório se chama **nome-de-usuario.github.io**)
+### ✏️ Editar o `.gitignore`
 
-> Exemplos:
->
-> `https://astuciasnor.github.io/`
->
-> `https://astuciasnor.github.io/meu_website`
+1.  No GitHub, abra o arquivo `.gitignore` e clique no ícone de lápis ✏️.\
+2.  Substitua o conteúdo por um modelo adequado para **R** e remova a linha `/docs`, se presente.\
+3.  Escreva uma mensagem de commit e clique em **Commit changes**.
 
-Parabéns! 🥳 Seu site com **Quarto** e **GitHub Pages** já está no ar.
+### 📄 Adicionar o arquivo de licença
 
-### 📝 Editar/adicionar os arquivo `.gitignore` e `LICENSE.md`
+1.  Clique em **"Add file" \> "Create new file"**
+2.  Nomeie como `LICENSE.md`
+3.  Cole o texto da licença desejada (ex: **MIT License**)
+4.  Clique em **Commit new file**
 
-Como etapa final, vamos ajustar o arquivo `.gitignore` e criar a licença do projeto:
+### 🔄 Atualize seu repositório local
 
-#### ✏️ Editar o `.gitignore`:
-
-1.  Acesse o repositório no **GitHub** e localize o arquivo `.gitignore`.
-2.  Clique no nome do arquivo e depois no ícone de lápis ✏️ para editá-lo.
-3.  Substitua o conteúdo por um modelo apropriado para projetos em **R**.
-4.  **Remova a linha `/docs`**, se estiver presente (ela impediria a publicação do site).
-5.  Escreva uma mensagem de commit explicando a alteração e clique em **Commit changes**.
-
-#### 📄 Adicionar o arquivo de licença:
-
-1.  No repositório, clique em **"Add file" \> "Create new file"**.
-2.  Nomeie o novo arquivo como: `LICENSE.md`
-3.  Insira o conteúdo da licença desejada (por exemplo, a **MIT License**, disponível como sugestão no GitHub).
-4.  Clique em **Commit new file** para salvar.
-
-#### 🔄 Atualizar o repositório local:
-
-Após essas alterações, volte ao RStudio e clique no botão **Pull** na aba **Git** para sincronizar o repositório local com o remoto.
+Volte ao RStudio e clique em **Pull** na aba **Git** para sincronizar as alterações.
