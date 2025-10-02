@@ -14,3 +14,10 @@ Este site é um espaço colaborativo criado para apoiar estudantes de graduaçã
 :::
 
 Explore nossos [tutoriais organizados por tema](tutoriais.qmd) ou confira os [posts mais recentes no blog](blog.qmd).
+
+## Atualizando websites
+
+git branch -m master main\
+git fetch origin\
+git branch -u origin/main main\
+git remote set-head origin -a

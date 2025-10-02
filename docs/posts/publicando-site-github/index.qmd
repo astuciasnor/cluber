@@ -34,11 +34,12 @@ Antes de começar, verifique se você possui os seguintes itens instalados e con
 
 Embora seja possível iniciar o projeto diretamente no RStudio, optamos por criar primeiro o repositório no GitHub. Essa ordem segue boas práticas de versionamento, facilitando a integração entre o repositório remoto e o projeto local desde o início.
 
-1.  Vá até: **File \> New Project \> Quarto Website** (ou **Quarto Blog**)
+1.  Vá até: **File \> New Project \> New Directory \> Quarto Website** (ou **Quarto Blog**)
 2.  Dê ao projeto o mesmo nome do repositório criado no GitHub:
     -   `meu_website`, `meu_blog`, ou `nome-de-usuario.github.io`
 3.  Escolha o diretório onde o projeto será salvo.
-4.  Clique em **Create Project**.
+4.  Clique em `Create a git repository.`
+5.  Clique em **Create Project**.
 
 O RStudio abrirá automaticamente o novo projeto com os arquivos iniciais (`index.qmd`, `_quarto.yml` etc.) prontos para edição e publicação.
 
@@ -143,15 +144,15 @@ Após alguns segundos, seu site estará **publicado** e acessível:
 ### ✏️ Editar o `.gitignore`
 
 1.  No GitHub, abra o arquivo `.gitignore` e clique no ícone de lápis ✏️.\
-2.  Substitua o conteúdo por um modelo adequado para **R** e remova a linha `/docs`, se presente.\
-3.  Escreva uma mensagem de commit e clique em **Commit changes**.
+2.  Substitua o conteúdo escolhendo o modelo adequado para **R** e remova a linha `/docs`, se presente.\
+3.  Clique em `Commit changes` e escreva uma mensagem de commit e clique em **Commit changes**.
 
 ### 📄 Adicionar o arquivo de licença
 
 1.  Clique em **"Add file" \> "Create new file"**
 2.  Nomeie como `LICENSE.md`
-3.  Cole o texto da licença desejada (ex: **MIT License**)
-4.  Clique em **Commit new file**
+3.  Clique em `Choose a license template` e escolha a licença deseja (ex: **MIT License**), revise-a e e submeta-a clicando em `Review and submit`.
+4.  Clique em **Commit changes.**
 
 ### 🔄 Atualize seu repositório local
 
